@@ -14,10 +14,9 @@ Development of a supporters club website.
 
 The app uses a MySQL database. Table list is as follows (alphabetical order):
 
-* groups
-* group_user
 * pages
 * posts
+* snippets
 * users
 
 In the process of development new tables may be added, therefore this list may change based on the needs of the app.
