@@ -1,4 +1,4 @@
-app-local
-=========
+arsenal-slovenija-dev
+=====================
 
-A local instance of Laravel 4 for educational purposes.
+Development of a supporters club website.

@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'app.local',
+	'default' => 'arsenal.slovenija',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -52,15 +52,15 @@ return array(
 			'prefix'   => '',
 		),
 
-		'app.local' => array(
+		'arsenal.slovenija' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'app.local',
+			'database'  => 'arsenal.slovenija',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
-			'prefix'    => 'neo_',
+			'prefix'    => '',
 		),
 
 		'pgsql' => array(
