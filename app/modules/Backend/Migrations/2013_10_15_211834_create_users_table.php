@@ -1,9 +1,10 @@
-<?php
+<?php namespace Backend\Migrations;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Schema;
 
-class PivotElementMediaTable extends Migration {
+class CreateUsersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,17 +13,14 @@ class PivotElementMediaTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('element_media', function(Blueprint $table) {
+		Schema::create('users', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('element_id');
-			$table->integer('media_id');
-			$table->integer('position');
-			$table->integer('creator');
-			$table->integer('updator');
+			$table->string('username', 32)->unique();
+			$table->string('email', 64)->unique();
+			$table->string('password', 64);
 			$table->timestamps();
 		});
 	}
-
 
 
 	/**
@@ -32,7 +30,7 @@ class PivotElementMediaTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('element_media');
+		Schema::drop('users');
 	}
 
 }
