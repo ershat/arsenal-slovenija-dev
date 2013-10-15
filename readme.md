@@ -10,6 +10,18 @@ Development of a supporters club website.
 * Post commenting with Disqus
 * more to follow...
 
+### Database
+
+The app uses a MySQL database. Table list is as follows (alphabetical order):
+
+* groups
+* group_user
+* pages
+* posts
+* users
+
+In the process of development new tables may be added, therefore this list may change based on the needs of the app.
+
 ### Info
 
 ##### Development team
