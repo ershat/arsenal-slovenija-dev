@@ -27,3 +27,7 @@ In the process of development new tables may be added, therefore this list may c
 
 ##### Development team
 * Lovro Papež / lovro.papez@gmail.com / http://www.twitter.com/slovenianGooner
+
+### Last update
+
+App last updated: 2013-10-16 11:20:00
