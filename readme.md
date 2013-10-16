@@ -3,6 +3,8 @@ arsenal-slovenija-dev
 
 Development of a supporters club website.
 
+EDIT: Website is being developed on both home and work computer thus reaping the benefits of a glorious tool called Git.
+
 ### Features
 
 * Backend with basic editing (pages, posts, sitename)
