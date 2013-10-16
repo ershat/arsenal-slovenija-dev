@@ -16,7 +16,7 @@ class CreatePagesTable extends Migration {
 			$table->increments('id');
 			$table->string('title', 128);
 			$table->string('slug', 128)->unique();
-			$table->string('subtitle'. 256);
+			$table->string('subtitle', 256);
 			$table->string('summary', 512);
 			$table->text('content');
 			$table->timestamps();
