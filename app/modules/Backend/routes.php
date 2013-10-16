@@ -8,4 +8,4 @@
 Route::get('backend', function()
 {
 	var_dump('Working!');
-})
+});
