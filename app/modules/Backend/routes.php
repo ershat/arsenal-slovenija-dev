@@ -8,7 +8,6 @@ Route::group(array('prefix' => 'backend', 'before' => 'auth'), function()
 {
 	Route::get('/', function()
 	{
-		var_dump(Auth::user()->email);
-		echo '<a href="/logout">Logout</a>';
+		return View::make('Backend::dashboard.index');
 	});
 });
