@@ -89,7 +89,11 @@ class PagesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$page = $this->page->findById($id);
+
+		$page->delete();
+
+		return Redirect::route('backend.pages.index');
 	}
 
 }

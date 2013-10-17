@@ -11,6 +11,10 @@ class SessionsController extends \BaseController {
 	 */
 	public function create()
 	{
+		if (Auth::check()) {
+			return Redirect::route('backend.home');
+		}
+
     return View::make('Backend::sessions.create');
 	}
 

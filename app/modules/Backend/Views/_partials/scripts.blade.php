@@ -3,3 +3,9 @@
 
 <!-- bootstrap js -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+
+<!-- tiny mce -->
+<script src="{{asset('/assets/vendor/tinymce/tinymce.min.js')}}"></script>
+
+<!-- main -->
+<script src="{{asset('/assets/module/backend/javascripts/main.js')}}"></script>
