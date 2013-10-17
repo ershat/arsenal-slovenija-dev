@@ -3,7 +3,7 @@
 @section('main')
 	<p class="lead">Page ID: {{$page->id}}</p>
 
-	{{Form::model($page, array('route' => 'backend.pages.store'))}}
+	{{Form::model($page, array('route' => array('backend.pages.update', $page->id), 'method' => 'PUT'))}}
 		
 		@if (count($errors->all()) > 0)
 			<div class="alert alert-danger">
@@ -38,7 +38,7 @@
 			{{Form::textarea('content', null, array('class' => 'form-control', 'rows' => '20'))}}
 		</div>
 
-		{{Form::submit('Create', array('class' => 'btn btn-success pull-right'))}}
+		{{Form::submit('Update', array('class' => 'btn btn-primary pull-right'))}}
 
 		<div class="clearfix"></div>
 

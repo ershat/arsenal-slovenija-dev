@@ -65,17 +65,6 @@ class PagesController extends \BaseController {
 	}
 
 	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-    return View::make('pages.edit');
-	}
-
-	/**
 	 * Update the specified resource in storage.
 	 *
 	 * @param  int  $id
@@ -83,7 +72,13 @@ class PagesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		if (!$this->validator->validate(Input::all())) {
+			return Redirect::back()->withErrors($this->validator->errors())->withInput();
+		}
+
+		$page = $this->page->updateExisting(Input::except('_token'), $id);
+
+		return Redirect::route('backend.pages.show', $page->id);
 	}
 
 	/**

@@ -26,4 +26,13 @@ class DbPageRepository implements PageRepositoryInterface {
 		return $page;
 	}
 
+	public function updateExisting($input, $id)
+	{
+		$page = Page::find($id);
+
+		$page->update($input);
+
+		return $page;
+	}
+
 }

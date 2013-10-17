@@ -6,4 +6,6 @@ interface	PageRepositoryInterface {
 	public function findById($id);
 
 	public function createNew($input);
+
+	public function updateExisting($input, $id);
 }
