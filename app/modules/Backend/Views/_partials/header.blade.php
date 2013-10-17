@@ -13,16 +13,24 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-header">
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/backend">Home</a></li>
-      <li><a href="/backend/pages">Pages</a></li>
-      <li><a href="/backend/posts">Posts</a></li>
-      <li><a href="/backend/snippets">Snippets</a></li>
+      <li @if(Str::contains(Route::currentRouteName(), 'backend.home')) class="active" @endif>
+        <a href="/backend">Home</a>
+      </li>
+      <li @if(Str::contains(Route::currentRouteName(), 'backend.pages')) class="active" @endif>
+        <a href="/backend/pages">Pages</a>
+      </li>
+      <li @if(Str::contains(Route::currentRouteName(), 'backend.posts')) class="active" @endif>
+        <a href="/backend/posts">Posts</a>
+      </li>
+      <li @if(Str::contains(Route::currentRouteName(), 'backend.snippets')) class="active" @endif>
+        <a href="/backend/snippets">Snippets</a>
+      </li>
     </ul>
   </div><!-- /.navbar-collapse -->
 
   <p class="navbar-text pull-right">
-  	Signed in with {{Auth::user()->email}}
-		<a href="/logout">(logout)</a>
+  	Signed in with <strong>{{Auth::user()->email}}</strong> | 
+		<a href="/logout">Logout</a>
   </p>
 
 </nav>

@@ -1,5 +1,5 @@
 @extends('Backend::master')
 
 @section('main')
-	Dashboard.
+	aaaaaa
 @stop

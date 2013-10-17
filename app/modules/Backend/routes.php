@@ -6,8 +6,11 @@ Route::resource('sessions', 'Backend\Controllers\SessionsController', ['only' =>
 
 Route::group(array('prefix' => 'backend', 'before' => 'auth'), function()
 {
-	Route::get('/', function()
+	Route::get('/', array('as' => 'backend.home', function()
 	{
 		return View::make('Backend::dashboard.index');
-	});
+	}));
+
+	Route::resource('pages', 'Backend\Controllers\PagesController');
+
 });
