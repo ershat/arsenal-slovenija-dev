@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default container" role="navigation">
 	
 	<div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-header">
@@ -26,11 +26,13 @@
         <a href="/backend/snippets">Snippets</a>
       </li>
     </ul>
+
   </div><!-- /.navbar-collapse -->
 
-  <p class="navbar-text pull-right">
-  	Signed in with <strong>{{Auth::user()->email}}</strong> | 
-		<a href="/logout">Logout</a>
+  <p class="navbar-text pull-right hidden-xs hidden-sm">
+    Signed in with <strong>{{Auth::user()->email}}</strong> | 
+    <a href="/logout">Logout</a>
   </p>
+
 
 </nav>

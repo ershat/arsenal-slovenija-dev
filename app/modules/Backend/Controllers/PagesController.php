@@ -1,15 +1,18 @@
 <?php namespace Backend\Controllers;
 
-use View;
+use View, Input, Redirect;
 use Backend\Repositories\PageRepositoryInterface;
+use Backend\Validators\PageValidator;
 
 class PagesController extends \BaseController {
 
 	protected $page;
+	protected $validator;
 
-	public function __construct(PageRepositoryInterface $page)
+	public function __construct(PageRepositoryInterface $page, PageValidator $validator)
 	{
 		$this->page = $page;
+		$this->validator = $validator;
 	}
 
 	/**
@@ -19,10 +22,6 @@ class PagesController extends \BaseController {
 	 */
 	public function index()
 	{
-		$pages = $this->page->getAll();
-
-		return $pages;
-
     return View::make('Backend::pages.index');
 	}
 
@@ -33,7 +32,7 @@ class PagesController extends \BaseController {
 	 */
 	public function create()
 	{
-    return View::make('pages.create');
+    return View::make('Backend::pages.create');
 	}
 
 	/**
@@ -43,7 +42,13 @@ class PagesController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		if (!$this->validator->validate(Input::all())) {
+			return Redirect::back()->withErrors($this->validator->errors())->withInput();
+		}
+
+		$page = $this->page->createNew(Input::except('_token'));
+
+		return Redirect::route('backend.pages.show', $page->id);
 	}
 
 	/**
@@ -54,7 +59,9 @@ class PagesController extends \BaseController {
 	 */
 	public function show($id)
 	{
-    return View::make('pages.show');
+		$page = $this->page->findById($id);
+
+    return View::make('Backend::pages.show')->with('page', $page);
 	}
 
 	/**

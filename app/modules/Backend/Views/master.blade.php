@@ -1,9 +1,13 @@
 <!doctype html>
 <html>
-	<head>@include('Backend::_partials.head')</head>
+	<head>
+		<title>Backend</title>
+		<meta charset="utf-8">
+		@include('Backend::_partials.head')
+	</head>
 	<body>
 		@include('Backend::_partials.header')
-		@yield('main')
+		@yield('app')
 		@include('Backend::_partials.scripts')
 	</body>
 </html>

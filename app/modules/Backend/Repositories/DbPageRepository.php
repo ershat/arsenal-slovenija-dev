@@ -9,9 +9,21 @@ class DbPageRepository implements PageRepositoryInterface {
 		return Page::all();
 	}
 
+	public function getAllReversed()
+	{
+		return Page::orderBy('id','desc')->get();
+	}
+
 	public function findById($id)
 	{
 		return Page::find($id);
+	}
+
+	public function createNew($input)
+	{
+		$page = Page::create($input);
+
+		return $page;
 	}
 
 }

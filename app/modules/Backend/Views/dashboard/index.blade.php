@@ -1,5 +1,7 @@
 @extends('Backend::master')
 
-@section('main')
-	Dashboard.
+@section('app')
+	<div class="container">
+		Dashboard
+	</div>
 @stop
