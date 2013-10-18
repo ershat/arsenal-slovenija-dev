@@ -14,6 +14,13 @@ class DbPageRepository implements PageRepositoryInterface {
 		return Page::orderBy('id','desc')->get();
 	}
 
+	public function getAllSelect()
+	{
+		$pages = Page::lists('title','id');
+		$pages[''] = '[none]';
+		return $pages;
+	}
+
 	public function findById($id)
 	{
 		return Page::find($id);
@@ -29,7 +36,6 @@ class DbPageRepository implements PageRepositoryInterface {
 	public function updateExisting($input, $id)
 	{
 		$page = Page::find($id);
-
 		$page->update($input);
 
 		return $page;
