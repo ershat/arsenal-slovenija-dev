@@ -116,7 +116,8 @@ return array(
 		'Profiler\ProfilerServiceProvider',
 		'Creolab\LaravelModules\ServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
-		'Cviebrock\EloquentSluggable\SluggableServiceProvider'
+		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
+		'Intervention\Image\ImageServiceProvider'
 	),
 
 	/*
@@ -187,6 +188,7 @@ return array(
 		'Image' 					=> 'Intervention\Image\Facades\Image',
 		'Profiler' 				=> 'Profiler\Facades\Profiler',
 		'Sluggable' 			=> 'Cviebrock\EloquentSluggable\Facades\Sluggable',
+		'Image' 					=> 'Intervention\Image\Facades\Image'
 	),
 
 );
