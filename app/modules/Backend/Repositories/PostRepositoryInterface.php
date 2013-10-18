@@ -6,7 +6,6 @@ interface	PostRepositoryInterface {
 	public function getAllReversed();
 	public function findById($id);
 
-	public function createNew($input);
-
-	public function updateExisting($input, $id);
+	public function create($input);
+	public function update($input, $id);
 }

@@ -13,7 +13,7 @@ class PostsSidebarComposer {
 
 	public function compose($view)
 	{
-		$view->withPosts($this->post->getPaginated(1));
+		$view->withPosts($this->post->getPaginated(10));
 	}
 
 }

@@ -23,7 +23,7 @@
         <a href="/backend/posts">Posts</a>
       </li>
       <li @if(Str::contains(Route::currentRouteName(), 'backend.snippets')) class="active" @endif>
-        <a href="/backend/snippets">Snippets</a>
+        <a href="#">Snippets (not available yet)</a>
       </li>
     </ul>
 

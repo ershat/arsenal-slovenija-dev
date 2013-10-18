@@ -36,6 +36,11 @@
 
 	<div class="form-group">
 		{{Form::label('photo', 'Photo')}}
+		@if (isset($post->photo) and !empty($post->photo))
+			<a href="{{asset('/images/posts/'.$post->photo)}}" target="_blank">View uploaded photo</a>
+			| Delete {{Form::input('checkbox', 'delete_photo')}}
+			<br>
+		@endif
 		{{Form::file('photo', null, array('class' => 'form-control'))}}
 	</div>
 

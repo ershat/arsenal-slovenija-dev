@@ -46,7 +46,7 @@ class PagesController extends \BaseController {
 			return Redirect::back()->withErrors($this->validator->errors())->withInput();
 		}
 
-		$page = $this->page->createNew(Input::except('_token'));
+		$page = $this->page->create(Input::except('_token'));
 
 		return Redirect::route('backend.pages.show', $page->id);
 	}
@@ -76,7 +76,7 @@ class PagesController extends \BaseController {
 			return Redirect::back()->withErrors($this->validator->errors())->withInput();
 		}
 
-		$page = $this->page->updateExisting(Input::except('_token'), $id);
+		$page = $this->page->update(Input::except('_token'), $id);
 
 		return Redirect::route('backend.pages.show', $page->id);
 	}

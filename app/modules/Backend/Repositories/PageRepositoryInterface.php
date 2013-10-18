@@ -6,7 +6,7 @@ interface	PageRepositoryInterface {
 	public function getAllSelect();
 	public function findById($id);
 
-	public function createNew($input);
+	public function create($input);
 
-	public function updateExisting($input, $id);
+	public function update($input, $id);
 }

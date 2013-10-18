@@ -1,6 +1,7 @@
 <?php namespace Backend\Repositories;
 
 use Backend\Models\Page as Page;
+use Backend\Services\PageManipulatorService as PMS;
 
 class DbPageRepository implements PageRepositoryInterface {
 
@@ -31,28 +32,14 @@ class DbPageRepository implements PageRepositoryInterface {
 		return Page::find($id);
 	}
 
-	public function createNew($input)
+	public function create($input)
 	{
-		if (empty($input['parent_id'])) {
-			$input['parent_id'] = null;
-		}
-
-		$page = Page::create($input);
-
-		return $page;
+		return PMS::create($input);
 	}
 
-	public function updateExisting($input, $id)
+	public function update($input, $id)
 	{
-		$page = Page::find($id);
-
-		if (empty($input['parent_id'])) {
-			$input['parent_id'] = null;
-		}
-
-		$page->update($input);
-
-		return $page;
+		return PMS::update($input, $id);
 	}
 
 }

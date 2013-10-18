@@ -1,7 +1,7 @@
 <?php namespace Backend\Repositories;
 
 use Backend\Models\Post as Post;
-use Backend\Services\ImageUploadService as ImageUpload;
+use Backend\Services\PostManipulatorService as PMS;
 
 class DbPostRepository implements PostRepositoryInterface {
 
@@ -25,31 +25,14 @@ class DbPostRepository implements PostRepositoryInterface {
 		return Post::find($id);
 	}
 
-	public function createNew($input, $file = null)
+	public function create($input, $file = null)
 	{
-
-		if (isset($file)) {
-			$input['photo'] = ImageUpload::make(public_path().'/images/posts/', $file);
-		}
-
-		$post = Post::create($input);
-
-		$post->slug .= '-' . $post->id;
-		$post->save();
-
-		return $post;
+		return PMS::create($input, $file);
 	}
 
-	public function updateExisting($input, $id)
+	public function update($input, $id, $file = null)
 	{
-		$post = Post::find($id);
-
-		$post->update($input);
-
-		$post->slug .= '-' . $post->id;
-		$post->save();
-
-		return $post;
+		return PMS::update($input, $id, $file);
 	}
 
 }
