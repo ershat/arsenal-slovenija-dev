@@ -12,5 +12,6 @@ Route::group(array('prefix' => 'backend', 'before' => 'auth'), function()
 	}));
 
 	Route::resource('pages', 'Backend\Controllers\PagesController');
+	Route::resource('posts', 'Backend\Controllers\PostsController');
 
 });

@@ -7,7 +7,8 @@
 		"way/generators": "dev-master",
 		"loic-sharma/profiler": "1.1.*",
 		"creolab/laravel-modules": "dev-master",
-		"cviebrock/eloquent-sluggable": "1.0.*"
+		"cviebrock/eloquent-sluggable": "1.0.*",
+		"intervention/image": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
