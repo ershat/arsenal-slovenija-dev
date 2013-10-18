@@ -6,7 +6,6 @@ Development of a supporters club website.
 ### Todo
 
 * Sluggable not updating the slug on the update event
-* Create a form for deleting the page (soft delete)
 * Add a text editor for content (tinyMCE, ckEditor)
 
 ### Features
