@@ -1,6 +1,7 @@
 <?php namespace Backend\Repositories;
 
 use Backend\Models\Post as Post;
+use Backend\Services\ImageUploadService as ImageUpload;
 
 class DbPostRepository implements PostRepositoryInterface {
 
@@ -24,8 +25,13 @@ class DbPostRepository implements PostRepositoryInterface {
 		return Post::find($id);
 	}
 
-	public function createNew($input)
+	public function createNew($input, $file = null)
 	{
+
+		if (isset($file)) {
+			$input['photo'] = ImageUpload::make(public_path().'/images/posts/', $file);
+		}
+
 		$post = Post::create($input);
 
 		$post->slug .= '-' . $post->id;

@@ -46,7 +46,7 @@ class PostsController extends \BaseController {
 			return Redirect::back()->withErrors($this->validator->errors())->withInput();
 		}
 
-		$post = $this->post->createNew(Input::except('_token'));
+		$post = $this->post->createNew(Input::except('_token'), Input::file('photo'));
 
 		return Redirect::route('backend.posts.show', $post->id);
 	}
