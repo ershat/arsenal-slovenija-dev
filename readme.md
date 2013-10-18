@@ -3,6 +3,11 @@ arsenal-slovenija-dev
 
 Development of a supporters club website.
 
+### Todo
+
+* User manager in backend
+* Snippets in backend
+
 ### Features
 
 * Backend with basic editing (pages, posts, sitename)
