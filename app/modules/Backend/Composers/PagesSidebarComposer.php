@@ -13,7 +13,7 @@ class PagesSidebarComposer {
 
 	public function compose($view)
 	{
-		$view->with('pages', $this->page->getAllReversed());
+		$view->withPages($this->page->getRoot());
 	}
 
 }

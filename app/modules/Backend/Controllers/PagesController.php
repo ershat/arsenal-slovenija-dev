@@ -61,7 +61,7 @@ class PagesController extends \BaseController {
 	{
 		$page = $this->page->findById($id);
 
-    return View::make('Backend::pages.show')->with('page', $page);
+    return View::make('Backend::pages.show')->withPage($page)->withId($id);
 	}
 
 	/**

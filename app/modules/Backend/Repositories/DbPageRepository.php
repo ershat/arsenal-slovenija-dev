@@ -14,6 +14,11 @@ class DbPageRepository implements PageRepositoryInterface {
 		return Page::orderBy('id','desc')->get();
 	}
 
+	public function getRoot()
+	{
+		return Page::whereNull('parent_id')->orderBy('position')->with('children')->get();
+	}
+
 	public function getAllSelect()
 	{
 		$pages = Page::lists('title','id');
@@ -28,6 +33,10 @@ class DbPageRepository implements PageRepositoryInterface {
 
 	public function createNew($input)
 	{
+		if (empty($input['parent_id'])) {
+			$input['parent_id'] = null;
+		}
+
 		$page = Page::create($input);
 
 		return $page;
@@ -36,6 +45,11 @@ class DbPageRepository implements PageRepositoryInterface {
 	public function updateExisting($input, $id)
 	{
 		$page = Page::find($id);
+
+		if (empty($input['parent_id'])) {
+			$input['parent_id'] = null;
+		}
+
 		$page->update($input);
 
 		return $page;
