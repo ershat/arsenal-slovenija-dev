@@ -1,0 +1,20 @@
+.link-list ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 8px;
+	border-top: 1px solid #ccc;
+}
+
+.link-list li {
+	background: url(/assets/module/website/images/sprite.png) no-repeat;
+	background-position: 0 -688px;
+	line-height: normal;
+	padding: 6px 0 5px 22px;
+	border-bottom: 1px solid #ccc;
+}
+
+.link-list a {
+	font-size: 14px;
+	cursor: pointer;
+}

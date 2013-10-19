@@ -1,0 +1,19 @@
+body {
+	font-family: 'Open Sans', sans-serif !important;
+}
+
+a {
+	color: #fc0405;
+}
+
+a:hover {
+	color: #2e2e2e;
+	text-decoration: none;
+}
+
+img {
+	border: 0;
+	max-width: 100%;
+	vertical-align: middle;
+	-ms-interpolation-mode: bicubic;
+}

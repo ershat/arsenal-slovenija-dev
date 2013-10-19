@@ -16,7 +16,8 @@
 			"app/tests/TestCase.php"
 		],
 		"psr-0": {
-			"Backend": "app/modules"
+			"Backend": "app/modules",
+			"Website": "app/modules"
 		}
 	},
 	"scripts": {

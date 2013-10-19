@@ -33,7 +33,7 @@ class ImageUploadService
 		// Get the photo and resize it
 		$photo = Image::make($start_path . '/' . $originalPhotoName);
 
-		$photo->resize($sizes->big, null, true)->save($start_path.'(big_'.$originalPhotoName);
+		$photo->resize($sizes->big, null, true)->save($start_path.'/big_'.$originalPhotoName);
 		$photo->resize($sizes->med, null, true)->save($start_path.'/med_'.$originalPhotoName);
 		$photo->resize($sizes->sm, null, true)->save($start_path.'/sm_'.$originalPhotoName);
 
