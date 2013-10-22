@@ -1,7 +1,7 @@
 arsenal-slovenija-dev
 =====================
 
-Development of a supporters club website.
+Development of a supporters club website. (edited from the work computer)
 
 ### Todo
 
