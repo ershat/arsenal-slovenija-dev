@@ -20,7 +20,7 @@ class PostsController extends \BaseController {
 	 */
 	public function show($slug)
 	{
-		return $this->post->findBySlug($slug);
+		return View::make('Website::posts.index')->withPost($this->post->findBySlug($slug));
 	}
 
 }

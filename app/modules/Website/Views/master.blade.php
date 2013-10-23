@@ -6,11 +6,14 @@
 		@include('Website::_partials.head')
 	</head>
 	<body>
-		@include('Website::_partials.header')
-		@if (isset($pages)) 
-			@include('Website::_partials.breadcrumbs') 
-		@endif
-		@yield('app')
+		<div class="app">
+			@include('Website::_partials.header')
+			@if (isset($pages)) 
+				@include('Website::_partials.breadcrumbs') 
+			@endif
+			@yield('app')
+			@include('Website::_partials.footer')			
+		</div>
 		@include('Website::_partials.scripts')
 	</body>
 </html>

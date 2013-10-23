@@ -1,4 +1,7 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,700");
+@import url("footer.css");
+@import url("nav.css");
 @import url("typo.css");
 @import url("blog.css");
 @import url("linklist.css");
+@import url("post.css");

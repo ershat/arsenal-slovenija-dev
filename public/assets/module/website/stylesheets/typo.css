@@ -1,13 +1,19 @@
 body {
 	font-family: 'Open Sans', sans-serif !important;
+	background: #df0012;
+	font-size: 14px;
+}
+
+.app {
+	background: #fff;
 }
 
 a {
-	color: #fc0405;
+	color: #df0012;
 }
 
 a:hover {
-	color: #2e2e2e;
+	color: #15212f;
 	text-decoration: none;
 }
 

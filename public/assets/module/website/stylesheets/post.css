@@ -1,0 +1,53 @@
+article {
+	margin: 0 0 20px 20%;
+}
+
+article h3 {
+	margin: 0 0 15px 0;
+	font-size: 20px;
+	color: #df0012;
+	font-weight: bold;
+	line-height: 1.3;
+}
+
+article .date-box {
+	background: #df0012;
+	color: #fff;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+article aside {
+	float: left;
+	width: 20%;
+	margin-left: -25%;
+	margin-top: 10%;
+	font-size: 12px;
+	line-height: 1.8;
+	color: #999;
+}
+
+@media screen and (max-width: 700px) {
+	article {
+		margin-left: 0px;
+	}
+
+	article aside {
+		float: none;
+		width: auto;
+		margin: 0 0 20px 0;
+		line-height: 1.5;
+	}
+}
+
+article p {
+	font-size: 14px;
+	line-height: 1.5;
+	color: #666;
+	text-align: justify;;
+}
+
+article footer {
+	font-size: 14px;
+	color: #999;
+}			

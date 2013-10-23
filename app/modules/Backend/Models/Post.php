@@ -30,4 +30,14 @@ class Post extends Eloquent {
   **/
   public $fillable = array('type','title','subtitle','summary','content','photo','tags','author','author_alias');
 
+  /**
+  *
+  * Author
+  *
+  **/
+  public function post_author()
+  {
+    return $this->belongsTo('Backend\Models\User', 'author');
+  }
+
 }
