@@ -10,14 +10,15 @@
 		</div>
 
 		<div class="col-md-4">
-			
-			@if (count($page->children))
+
+			<!-- always display the first page children -->
+			@if (count($pages[0]->children))
 				<div class="link-list">
 					<h4>Preberi več...</h4>
 					<ul>
-						@foreach($page->children as $index => $subpage)
+						@foreach($pages[0]->children as $index => $subpage)
 							<li>
-								<a href="/{{$page->slug}}/{{$subpage->slug}}">{{$subpage->title}}</a>
+								<a href="/{{$pages[0]->slug}}/{{$subpage->slug}}">{{$subpage->title}}</a>
 							</li>
 						@endforeach
 					</ul>					

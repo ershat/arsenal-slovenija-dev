@@ -7,6 +7,9 @@
 	</head>
 	<body>
 		@include('Website::_partials.header')
+		@if (isset($pages)) 
+			@include('Website::_partials.breadcrumbs') 
+		@endif
 		@yield('app')
 		@include('Website::_partials.scripts')
 	</body>
