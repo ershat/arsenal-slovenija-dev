@@ -22,6 +22,11 @@
             <a href="@if(!empty($item->subtitle)){{$item->subtitle}}" target="_blank"@else/{{$item->slug}}"@endif>{{$item->title}}</a>
           </li>
         @endforeach
+        <li>
+          <a href="javascript:void(0);">
+            <input type="search" class="form-control form-search" placeholder="Išči...">
+          </a>
+        </li>
       </ul>
 
     </div><!-- /.navbar-collapse -->

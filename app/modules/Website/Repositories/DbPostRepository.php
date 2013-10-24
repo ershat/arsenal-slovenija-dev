@@ -11,7 +11,7 @@ class DbPostRepository implements PostRepositoryInterface {
 
 	public function findBySlug($slug)
 	{
-		return Post::whereSlug($slug)->with('post_author')->first();
+		return Post::whereSlug($slug)->with('post_author')->firstOrFail();
 	}
 
 }

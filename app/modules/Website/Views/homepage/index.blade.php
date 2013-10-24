@@ -28,7 +28,9 @@
 		</div>
 
 		<div class="col-md-4">
-			
+			@include('Website::homepage.forum')
+			@include('Website::homepage.join')
+			@include('Website::homepage.banner')
 		</div>
 
 	</div>
