@@ -17,12 +17,18 @@ article .date-box {
 	border-radius: 5px;
 }
 
+article .article-image {
+	float: right;
+	margin: 0 0 20px 20px;
+	width: 510px;
+}
+
 article aside {
 	float: left;
 	width: 20%;
 	margin-left: -25%;
 	margin-top: 10%;
-	font-size: 12px;
+	font-size: 18px;
 	line-height: 1.8;
 	color: #999;
 }
@@ -37,6 +43,10 @@ article aside {
 		width: auto;
 		margin: 0 0 20px 0;
 		line-height: 1.5;
+	}
+
+	article .article-image {
+		width: 100%;
 	}
 }
 

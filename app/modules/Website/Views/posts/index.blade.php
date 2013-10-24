@@ -6,6 +6,8 @@
 
 			<article>
 
+				<a href="{{URL::previous()}}">&laquo; Nazaj</a><br><br>
+
 				<header>
 					<h3>{{$post->title}}</h3>					
 				</header>
@@ -13,9 +15,7 @@
 				<aside>{{$post->summary}}</aside>
 				
 				@if (!empty($post->photo))
-					<div class="article-image">
-						<img src="{{display_post_image($post->photo, 'med_')}}">
-					</div>
+					<img src="{{display_post_image($post->photo, 'big_')}}" class="article-image thumbnail">
 				@endif
 
 				{{$post->content}}

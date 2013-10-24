@@ -7,7 +7,7 @@
 				@foreach($posts as $index => $post)
 					<section class="secondary">
 					  <div class="article-image">
-							<img src="{{display_post_image($post->photo, 'sm_')}}">
+							<img src="{{display_post_image($post->photo, 'sm_')}}" class="thumbnail">
 							<a href="{{route('posts.show', $post->slug)}}">
 								<span>{{$post->title}}</span>
 							</a>    
