@@ -76,10 +76,10 @@ return array(
 
 		'sqlsrv' => array(
 			'driver'   => 'sqlsrv',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
+			'host'     => 'lab.n3.si',
+			'database' => 'arsenal-slovenija',
+			'username' => 'sa',
+			'password' => '0rehova.p0tica',
 			'prefix'   => '',
 		),
 
