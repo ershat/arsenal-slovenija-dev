@@ -60,4 +60,8 @@ article p {
 article footer {
 	font-size: 14px;
 	color: #999;
+}
+
+article .comments {
+	margin-top: 15px;
 }			
