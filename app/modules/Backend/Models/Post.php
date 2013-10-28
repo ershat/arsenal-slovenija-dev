@@ -40,4 +40,14 @@ class Post extends Eloquent {
     return $this->belongsTo('Backend\Models\User', 'author');
   }
 
+  /**
+  *
+  * Scope search
+  *
+  **/
+  public function scopeSearch($query, $keyword)
+  {
+    return $query->where('title', 'like', "%$".$keyword."%")->orWhere('content', 'like', '%'.$keyword.'%');
+  }
+
 }

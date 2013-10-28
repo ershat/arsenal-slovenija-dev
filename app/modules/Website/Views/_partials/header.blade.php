@@ -24,7 +24,9 @@
         @endforeach
         <li>
           <a href="javascript:void(0);">
-            <input type="search" class="form-control form-search" placeholder="Išči...">
+            {{Form::open(['method' => 'GET'])}}
+              <input type="search" class="form-control form-search" placeholder="Išči..." name="q" @if (Request::has('q')) value="{{Request::get('q')}}" @endif>
+            {{Form::close()}}
           </a>
         </li>
       </ul>

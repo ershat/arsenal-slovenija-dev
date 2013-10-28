@@ -1,5 +1,8 @@
 <?php 
 
+// Migration
+Route::get('migration', 'MigrationController@show');
+
 Route::get('/', array('as' => 'home', 'uses' => 'Website\Controllers\HomepageController@index'));
 
 Route::get('novice/{slug}', array('as' => 'posts.show', 'uses' => 'Website\Controllers\PostsController@show'));
