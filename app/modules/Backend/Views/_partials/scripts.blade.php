@@ -7,5 +7,9 @@
 <!-- tiny mce -->
 <script src="{{asset('/assets/vendor/tinymce/tinymce.min.js')}}"></script>
 
+<!-- plupload -->
+<script type="text/javascript" src="http://bp.yahooapis.com/2.4.21/browserplus-min.js"></script>
+<script src="{{asset('/assets/vendor/plupload/js/plupload.full.js')}}"></script>
+
 <!-- main -->
 <script src="{{asset('/assets/module/backend/javascripts/main.js')}}"></script>

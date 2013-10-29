@@ -15,7 +15,8 @@ class CreatePhotosTable extends Migration {
 		Schema::create('gallery', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('path', 512);
+			$table->string('folder', 512);
+			$table->string('filename', 512);
 			$table->integer('imageable_id');
 			$table->string('imageable_type');
 			$table->timestamps();

@@ -24,7 +24,7 @@
 				  </a>
 				  <div class="clearfix"></div><br>
 
-					@if (!empty($post->summary))
+					@if (!empty($post->summary) and !Str::contains($post->summary, '<img'))
 						{{$post->summary}}
 					@else
 						{{Str::limit(strip_tags($post->content), 100, '...')}}

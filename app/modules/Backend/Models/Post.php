@@ -50,4 +50,14 @@ class Post extends Eloquent {
     return $query->where('title', 'like', "%$".$keyword."%")->orWhere('content', 'like', '%'.$keyword.'%');
   }
 
+  /**
+  *
+  * Images
+  *
+  **/
+  public function gallery()
+  {
+    return $this->morphMany('Backend\Models\Image', 'imageable');
+  }
+
 }

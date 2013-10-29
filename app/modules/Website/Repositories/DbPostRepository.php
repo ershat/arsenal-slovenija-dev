@@ -5,9 +5,9 @@ use Request;
 
 class DbPostRepository implements PostRepositoryInterface {
 
-	public function getPaginated($itemNo)
+	public function getPaginated($itemNo, $type = 'news')
 	{
-		$results = Post::orderBy('created_at', 'desc')->with('post_author');
+		$results = Post::orderBy('created_at', 'desc')->whereType($type)->with('post_author');
 		$keyword = Request::get('q');
 
 		if (Request::has('q')){
@@ -19,7 +19,7 @@ class DbPostRepository implements PostRepositoryInterface {
 
 	public function findBySlug($slug)
 	{
-		return Post::whereSlug($slug)->with('post_author')->firstOrFail();
+		return Post::whereSlug($slug)->with('post_author')->with('gallery')->firstOrFail();
 	}
 
 }

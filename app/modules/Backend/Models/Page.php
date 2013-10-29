@@ -40,4 +40,14 @@ class Page extends Eloquent {
     return $this->hasMany('Backend\Models\Page', 'parent_id');
   }
 
+  /**
+  *
+  * Images
+  *
+  **/
+  public function gallery()
+  {
+    return $this->morphMany('Backend\Models\Image', 'imageable');
+  }
+
 }
