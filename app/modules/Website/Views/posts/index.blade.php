@@ -41,6 +41,26 @@
 					Objavljeno: {{date('d.m.Y', strtotime($post->created_at))}} | 
 					Avtor: @if (!empty($post->author_alias)) {{$post->author_alias}} @else {{$post->post_author->username}} @endif
 					<div class="clearfix"></div>
+
+					@if (count($post->gallery) > 0)
+						<hr>
+						<div id="gallery" style="margin-top: 20px;">
+							<h3>Galerija slik</h3>
+							@foreach($post->gallery as $index => $image)
+								@if ($index == 0 or $index % 4 == 0)
+									<div class="row">
+								@endif
+								<div class="col-md-3">
+									<a href="{{$image->folder.'/'.$image->filename}}" class="thumbnail fancybox post-gallery-image @if ($index > 0)visible-lg visible-md@endif" rel="{{$post->id}}">
+										<img src="{{$image->folder.'/'.$image->filename}}" alt="">
+									</a>
+								</div>
+								@if ($index == (count($post->gallery) - 1) or $index % 4 == 3)
+									</div>
+								@endif
+							@endforeach
+						</div>
+					@endif
 				</footer>
 
 				<hr>

@@ -4,5 +4,9 @@
 <!-- bootstrap js -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 
+<!-- fancybox js -->
+<script src="{{asset('/assets/vendor/fancybox/jquery.fancybox.js')}}"></script>
+<script src="{{asset('/assets/vendor/fancybox/jquery.fancybox-thumbs.js')}}"></script>
+
 <!-- main js -->
 <script src="{{asset('/assets/module/website/javascripts/main.js')}}"></script>

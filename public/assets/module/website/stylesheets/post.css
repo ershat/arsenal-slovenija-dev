@@ -65,3 +65,9 @@ article footer {
 article .comments {
 	margin-top: 15px;
 }			
+
+.post-gallery-image {
+	height: 130px;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
