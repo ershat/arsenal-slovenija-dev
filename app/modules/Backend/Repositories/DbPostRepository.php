@@ -35,4 +35,9 @@ class DbPostRepository implements PostRepositoryInterface {
 		return PMS::update($input, $id, $file);
 	}
 
+	public function updateSingle($name, $value, $id)
+	{
+		return PMS::updateSingle($name, $value, $id);
+	}
+
 }

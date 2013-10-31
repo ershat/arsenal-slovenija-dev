@@ -43,4 +43,13 @@ class PostManipulatorService {
 		return $post;
 	}
 
+	public static function updateSingle($name, $value, $id)
+	{
+		$post = Post::find($id);
+		$post->{$name} = $value;
+
+		return $post->save();
+	}
+
+
 }

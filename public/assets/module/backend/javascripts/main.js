@@ -12,22 +12,26 @@ jQuery(document).ready(function($) {
 			"searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
 			"save table contextmenu directionality emoticons template paste textcolor"
 		],
+		relative_urls: false,
 		style_formats: [
 			{
-				title: 'Image Left', selector: 'img', 
+				title: 'Image Left', selector: 'img',
+				classes: 'thumbnail pull-left img-responsive',
 				styles: {
-					'float' : 'left', 
 					'margin': '0 10px 10px 0'
 				}
 			},
 			{
 				title: 'Image Right', selector: 'img', 
+				classes: 'thumbnail pull-right img-responsive',
 				styles: {
-					'float' : 'right', 
 					'margin': '0 0 10px 10px'
 				}
 			}
-		]
+		],
+	  external_filemanager_path:"/assets/vendor/filemanager/",
+		filemanager_title:"Filemanager" ,
+		external_plugins: { "filemanager" : "/assets/vendor/filemanager/plugin.min.js"}
 	});
 
 	/**

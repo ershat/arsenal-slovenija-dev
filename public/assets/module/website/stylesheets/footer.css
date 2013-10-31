@@ -3,3 +3,9 @@ footer.bottom {
 	min-height: 100px;
 	background: #df0012;
 }
+
+#editIt {
+	position: fixed;
+	top: 10px;
+	left: 10px;
+}

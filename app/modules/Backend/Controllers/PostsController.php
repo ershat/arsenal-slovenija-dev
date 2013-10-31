@@ -82,6 +82,19 @@ class PostsController extends \BaseController {
 	}
 
 	/**
+	 * Update the specified part of resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return JSON
+	 */
+	public function updateSingle($id)
+	{
+		$postUpdate = $this->post->updateSingle(Input::get('name'), Input::get('value'), $id);
+
+		return array('status' => $postUpdate);
+	}	
+
+	/**
 	 * Remove the specified resource from storage.
 	 *
 	 * @param  int  $id

@@ -1,10 +1,14 @@
 @extends('Website::master')
 
 @section('app')
-	<div class="container">
+	<div class="container page">
 
 		<div class="col-md-8">
-			<h3 @if(!Auth::guest())class="editable"@endif>{{$page->title}}</h3>
+			@if (!Auth::guest())
+				<h3 class="editable" data-url="{{route('backend.pages.updateSingle', $page->id)}}" data-name="title">{{$page->title}}</h3>
+			@else
+				<h3>{{$page->title}}</h3>
+			@endif
 
 			@if (!Auth::guest())
 				<div class="editable" data-url="{{route('backend.pages.updateSingle', $page->id)}}" data-name="content">{{$page->content}}</div>

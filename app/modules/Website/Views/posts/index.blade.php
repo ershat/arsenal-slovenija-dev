@@ -9,7 +9,11 @@
 				<a href="{{URL::previous()}}">&laquo; Nazaj</a><br><br>
 
 				<header>
-					<h3>{{$post->title}}</h3>
+					@if (!Auth::guest())
+						<h3 class="editable" data-url="{{route('backend.posts.updateSingle', $post->id)}}" data-name="title">{{$post->title}}</h3>
+					@else
+						<h3>{{$post->title}}</h3>
+					@endif
 				</header>
 
 				<aside>
@@ -35,7 +39,11 @@
 					<img src="{{display_post_image($post->photo, '')}}" class="article-image thumbnail">
 				@endif
 
-				{{$post->content}}
+				@if (!Auth::guest())
+					<div class="editable" data-url="{{route('backend.posts.updateSingle', $post->id)}}" data-name="content">{{$post->content}}</div>
+				@else
+					{{$post->content}}
+				@endif
 
 				<footer>
 					Objavljeno: {{date('d.m.Y', strtotime($post->created_at))}} | 

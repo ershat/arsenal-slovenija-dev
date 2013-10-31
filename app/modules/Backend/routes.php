@@ -13,6 +13,7 @@ Route::group(array('prefix' => 'backend', 'before' => 'auth'), function()
 
 	Route::post('pages/update-single/{id}', array('as' => 'backend.pages.updateSingle', 'uses' => 'Backend\Controllers\PagesController@updateSingle'));
 	Route::resource('pages', 'Backend\Controllers\PagesController');
+	Route::post('posts/update-single/{id}', array('as' => 'backend.posts.updateSingle', 'uses' => 'Backend\Controllers\PostsController@updateSingle'));
 	Route::resource('posts', 'Backend\Controllers\PostsController');
 	Route::resource('gallery', 'Backend\Controllers\GalleryController');
 
