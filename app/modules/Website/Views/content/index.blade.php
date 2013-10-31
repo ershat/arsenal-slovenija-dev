@@ -4,9 +4,13 @@
 	<div class="container">
 
 		<div class="col-md-8">
-			<h3>{{$page->title}}</h3>
+			<h3 @if(!Auth::guest())class="editable"@endif>{{$page->title}}</h3>
 
-			{{$page->content}}
+			@if (!Auth::guest())
+				<div class="editable" data-url="{{route('backend.pages.updateSingle', $page->id)}}" data-name="content">{{$page->content}}</div>
+			@else
+				{{$page->content}}
+			@endif
 		</div>
 
 		<div class="col-md-4">

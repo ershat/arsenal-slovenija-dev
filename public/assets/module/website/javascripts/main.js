@@ -29,4 +29,37 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+	tinymce.init({
+    selector: ".editable",
+    inline: true,
+    toolbar: "undo redo",
+    menubar: false
+	});
+
+	tinymce.init({
+	  selector: "div.editable",
+	  inline: true,
+	  plugins: [
+	      "advlist autolink lists link image charmap print preview anchor save",
+	      "searchreplace visualblocks code fullscreen",
+	      "insertdatetime media table contextmenu paste"
+	  ],
+	  menubar: false,
+	  toolbar: "save | insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+	  save_onsavecallback: function(){
+	  	var element = $('#' + $(this)[0].id);
+	  	$.post(element.data('url'), { 'name': element.data('name'), 'value': element.html() }, function(data){
+	  		if (data.status !== undefined){
+	  			if (data.status) {
+	  				alert('Saved!');
+	  			} else {
+	  				alert('Error saving!');
+	  			}
+	  		} else {
+	  			alert('Error saving!');
+	  		}
+	  	});
+	  }
+	});
+
 });

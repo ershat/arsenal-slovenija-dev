@@ -37,4 +37,12 @@ class PageManipulatorService {
 		return $page;
 	}
 
+	public static function updateSingle($name, $value, $id)
+	{
+		$page = Page::find($id);
+		$page->{$name} = $value;
+
+		return $page->save();
+	}
+
 }

@@ -82,6 +82,19 @@ class PagesController extends \BaseController {
 	}
 
 	/**
+	 * Update the specified part of resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return JSON
+	 */
+	public function updateSingle($id)
+	{
+		$pageUpdate = $this->page->updateSingle(Input::get('name'), Input::get('value'), $id);
+
+		return array('status' => $pageUpdate);
+	}	
+
+	/**
 	 * Remove the specified resource from storage.
 	 *
 	 * @param  int  $id

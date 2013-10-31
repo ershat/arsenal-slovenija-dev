@@ -11,6 +11,7 @@ Route::group(array('prefix' => 'backend', 'before' => 'auth'), function()
 		return View::make('Backend::dashboard.index');
 	}));
 
+	Route::post('pages/update-single/{id}', array('as' => 'backend.pages.updateSingle', 'uses' => 'Backend\Controllers\PagesController@updateSingle'));
 	Route::resource('pages', 'Backend\Controllers\PagesController');
 	Route::resource('posts', 'Backend\Controllers\PostsController');
 	Route::resource('gallery', 'Backend\Controllers\GalleryController');

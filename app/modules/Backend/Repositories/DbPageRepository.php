@@ -42,4 +42,9 @@ class DbPageRepository implements PageRepositoryInterface {
 		return PMS::update($input, $id);
 	}
 
+	public function updateSingle($name, $value, $id)
+	{
+		return PMS::updateSingle($name, $value, $id);
+	}
+
 }

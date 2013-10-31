@@ -8,5 +8,8 @@
 <script src="{{asset('/assets/vendor/fancybox/jquery.fancybox.js')}}"></script>
 <script src="{{asset('/assets/vendor/fancybox/jquery.fancybox-thumbs.js')}}"></script>
 
+<!-- tiny mce -->
+<script src="{{asset('/assets/vendor/tinymce/tinymce.min.js')}}"></script>
+
 <!-- main js -->
 <script src="{{asset('/assets/module/website/javascripts/main.js')}}"></script>
