@@ -7,6 +7,8 @@ Development of a supporters club website. (edited from the work computer)
 
 * User manager in backend
 * Snippets in backend
+* Photos and files on pages in backend
+* Post list (certain type) in website
 
 ### Features
 
