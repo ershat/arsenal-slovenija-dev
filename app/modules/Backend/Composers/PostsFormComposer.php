@@ -15,7 +15,8 @@ class PostsFormComposer {
 	{
 		$view->with('postTypes', array(
 			'news' => 'news',
-			'report' => 'report'
+			'report' => 'report',
+			'legends' => 'legends'
 		));
 	}
 

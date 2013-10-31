@@ -2,12 +2,20 @@
 
 use Backend\Models\Post as Post;
 use Backend\Services\PostManipulatorService as PMS;
+use Request;
 
 class DbPostRepository implements PostRepositoryInterface {
 
 	public function getPaginated($itemNo)
 	{
-		return Post::orderBy('created_at', 'desc')->paginate($itemNo);
+		$results = Post::orderBy('created_at', 'desc');
+		$keyword = Request::get('q');
+
+		if (Request::has('q')){
+			$results = $results->search(Request::get('q'));			
+		}
+
+		return $results->paginate($itemNo);
 	}
 
 	public function getAll()

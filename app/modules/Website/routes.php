@@ -7,6 +7,7 @@ Route::get('/', array('as' => 'home', 'uses' => 'Website\Controllers\HomepageCon
 
 Route::get('novice/{slug}', array('as' => 'posts.show', 'uses' => 'Website\Controllers\PostsController@show'));
 Route::get('arsenal/legende-kluba/{slug}', array('as' => 'posts.legends.show', 'uses' => 'Website\Controllers\PostsController@show'));
+Route::get('reportaze-in-slike/{slug}', array('as' => 'posts.reports.show', 'uses' => 'Website\Controllers\PostsController@show'));
 
 Route::get('{slug}/{slug2}/{slug3}/{slug4}/{slug5}', array('uses' => 'Website\Controllers\PagesController@show'));
 Route::get('{slug}/{slug2}/{slug3}/{slug4}', array('uses' => 'Website\Controllers\PagesController@show'));
