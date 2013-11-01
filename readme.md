@@ -6,14 +6,13 @@ Development of a supporters club website. (edited from the work computer)
 ### Todo
 
 * User manager in backend
-* Snippets in backend
-* Photos and files on pages in backend
 * Post list (certain type) in website
 
 ### Features
 
 * Backend with basic editing (pages, posts, sitename)
 * Frontend (homepage, posts, supporters club, arsenal, reports and photos etc.)
+* Frontend editing (inline)
 * Post commenting with Disqus
 * more to follow...
 
@@ -23,7 +22,6 @@ The app uses a MySQL database. Table list is as follows (alphabetical order):
 
 * pages
 * posts
-* snippets
 * users
 
 In the process of development new tables may be added, therefore this list may change based on the needs of the app.
