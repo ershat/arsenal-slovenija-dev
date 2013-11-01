@@ -37,6 +37,7 @@
 		</div>
 
 		<div class="col-md-4">
+			@include('Website::homepage.matches')
 			@include('Website::homepage.social')
 			@include('Website::homepage.forum')
 			@include('Website::homepage.join')
