@@ -8,7 +8,7 @@
 	Kako postati član <span class="glyphicon glyphicon-hand-right"></span>	
 </a><br>
 
-<a href="/novice/podaljsevanje-clanstva-in-vclanjevanje/">
+<a href="/images/uploads/pristopna_izjava.pdf" target="_blank">
 	Pristopna izjava <span class="glyphicon glyphicon-hand-right"></span>	
 </a>
 

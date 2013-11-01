@@ -37,79 +37,20 @@ jQuery(document).ready(function($) {
 			removeTinymce();
 		} else {
 			$(this).removeClass('btn-primary').addClass('btn-success').addClass('editing').html('Cancel editing');
-			tinymce.init({
-		    selector: ".editable",
-		    plugins: "save",
-		    inline: true,
-		    toolbar: "save | undo redo",
-		    menubar: false,
-		    save_onsavecallback: function(){
-		    	var element = $('#' + $(this)[0].id);
-		    	$.post(element.data('url'), { 'name': element.data('name'), 'value': element.html() }, function(data){
-		    		if (data.status !== undefined){
-		    			if (data.status) {
-		    				alert('Saved!');
-		    			} else {
-		    				alert('Error saving!');
-		    			}
-		    		} else {
-		    			alert('Error saving!');
-		    		}
-		    	});
-		    }
-			});
 
-			tinymce.init({
-			  selector: "div.editable",
-			  inline: true,
-			  plugins: [
-			      "advlist autolink lists link image charmap print preview anchor save",
-			      "searchreplace visualblocks code fullscreen",
-			      "insertdatetime media table contextmenu paste"
-			  ],
-			  style_formats: [
-			  	{
-			  		title: 'Image Left', selector: 'img',
-			  		classes: 'thumbnail pull-left img-responsive',
-			  		styles: {
-			  			'margin': '0 10px 10px 0'
-			  		}
-			  	},
-			  	{
-			  		title: 'Image Right', selector: 'img', 
-			  		classes: 'thumbnail pull-right img-responsive',
-			  		styles: {
-			  			'margin': '0 0 10px 10px'
-			  		}
-			  	}
-			  ],
-			  menubar: false,
-			  relative_urls: false,
-			  toolbar: "save | insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-			  save_onsavecallback: function(){
-			  	var element = $('#' + $(this)[0].id);
-			  	$.post(element.data('url'), { 'name': element.data('name'), 'value': element.html() }, function(data){
-			  		if (data.status !== undefined){
-			  			if (data.status) {
-			  				alert('Saved!');
-			  			} else {
-			  				alert('Error saving!');
-			  			}
-			  		} else {
-			  			alert('Error saving!');
-			  		}
-			  	});
-			  },
-			  external_filemanager_path:"/assets/vendor/filemanager/",
-				filemanager_title:"Filemanager" ,
-				external_plugins: { "filemanager" : "/assets/vendor/filemanager/plugin.min.js"}
-			});
+			simpleTinyMCE(".editable");
+			extendedTinyMCE("div.editable");
 		}
 
 	});
 
 });
 
+/**
+*
+* Remove tinyMCE elements
+*
+**/
 function removeTinymce()
 {
   if(tinymce.editors.length > 0){
@@ -118,3 +59,104 @@ function removeTinymce()
 		}
   }
 }
+
+/**
+*
+* On save function
+*
+**/
+function tinyMCEOnSave()
+{
+	var element = $('#' + $(this)[0].id);
+	$.post(element.data('url'), { 'name': element.data('name'), 'value': element.html() }, function(data){
+		if (data.status !== undefined){
+			if (data.status) {
+				alert('Saved!');
+			} else {
+				alert('Error saving!');
+			}
+		} else {
+			alert('Error saving!');
+		}
+	});	
+}
+
+/**
+*
+* some tinyMCE settings
+*
+**/
+var simpleToolbar = "save | undo redo";
+var extendedToolbar = "save | undo redo removeformat | styleselect | bold italic | alignleft aligncenter alignright alignjustify | link image";
+
+/**
+*
+* Simple TinyMCE
+*
+**/
+function simpleTinyMCE(selector)
+{
+	tinymce.init({
+    selector: selector,
+    plugins: "save",
+    inline: true,
+    toolbar: simpleToolbar,
+    menubar: false,
+    save_onsavecallback: tinyMCEOnSave
+	});
+}
+
+/**
+*
+* Extended TinyMCE
+*
+**/
+function extendedTinyMCE(selector)
+{
+	tinymce.init({
+	  selector: selector,
+	  inline: true,
+	  plugins: [
+	      "advlist autolink lists link image charmap print preview anchor save",
+	      "searchreplace visualblocks code fullscreen",
+	      "insertdatetime media table contextmenu paste"
+	  ],
+	  // style_formats: tinyMCEStyleFormats,
+	  menubar: false,
+	  relative_urls: false,
+	  toolbar: extendedToolbar,
+	  save_onsavecallback: tinyMCEOnSave,
+	  external_filemanager_path:"/assets/vendor/filemanager/",
+		filemanager_title:"Filemanager" ,
+		external_plugins: { "filemanager" : "/assets/vendor/filemanager/plugin.min.js"}
+	});
+}
+
+/**
+*
+* Styles
+*
+**/
+var tinyMCEStyleFormats =
+[
+	{
+		title: 'Image Left', selector: 'img',
+		classes: 'thumbnail pull-left img-responsive',
+		styles: {
+			'margin': '0 10px 10px 0'
+		}
+	},
+	{
+		title: 'Image Right', selector: 'img', 
+		classes: 'thumbnail pull-right img-responsive',
+		styles: {
+			'margin': '0 0 10px 10px'
+		}
+	},
+	{
+		title: 'Alert - important', selector: 'p',
+		classes: 'alert alert-danger'
+	},
+];
+
+

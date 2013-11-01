@@ -39,10 +39,22 @@
 		</div>
 
 		<div class="col-md-4">
-			@include('Website::homepage.social')
-			@include('Website::homepage.forum')
-			@include('Website::homepage.join')
-			@include('Website::homepage.banner')
+
+			<!-- always display the first page children -->
+			@if (count($pages[0]->children))
+				<div class="link-list">
+					<h4>Preberi več...</h4>
+					<ul>
+						@foreach($pages[0]->children as $index => $subpage)
+							<li>
+								<a href="/{{$pages[0]->slug}}/{{$subpage->slug}}">{{$subpage->title}}</a>
+							</li>
+						@endforeach
+					</ul>					
+				</div>
+			@endif
+
+
 		</div>
 
 	</div>
