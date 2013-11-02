@@ -52,6 +52,12 @@
 						@endforeach
 					</ul>					
 				</div>
+			@else
+				@include('Website::homepage.matches')
+				@include('Website::homepage.social')
+				@include('Website::homepage.forum')
+				@include('Website::homepage.join')
+				@include('Website::homepage.banner')
 			@endif
 
 
