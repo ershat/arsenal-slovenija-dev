@@ -5,13 +5,13 @@ article {
 article h3 {
 	margin: 0 0 15px 0;
 	font-size: 20px;
-	color: #df0012;
+	color: #b2001a;
 	font-weight: bold;
 	line-height: 1.3;
 }
 
 article .date-box {
-	background: #df0012;
+	background: #b2001a;
 	color: #fff;
 	padding: 10px;
 	border-radius: 5px;

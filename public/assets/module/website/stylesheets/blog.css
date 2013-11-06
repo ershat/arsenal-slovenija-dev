@@ -62,6 +62,6 @@ position: relative;
 .blog .pagination>.active>span:hover, 
 .blog .pagination>.active>a:focus, 
 .blog .pagination>.active>span:focus {
-	background-color: #df0012;
-	border-color: #df0012;
+	background-color: #b2001a;
+	border-color: #b2001a;
 }
