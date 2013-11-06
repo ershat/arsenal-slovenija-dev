@@ -19,7 +19,7 @@ class HomepageController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('Website::homepage.index')->withPosts($this->post->getPaginated(10));
+		return View::make('Website::homepage.index')->withFeatured($this->post->getFeatured())->withPosts($this->post->getPaginated(10));
 	}
 
 }

@@ -2,6 +2,17 @@ section {
 	padding: 19px 0;
 }
 
+.primary .carousel .carousel-indicators {
+	bottom: 0px;
+}
+
+.primary .carousel .carousel-caption {
+	bottom: 35px;
+	background: #b2001a;
+	padding: 10px;
+	padding-top: 0;
+}
+
 .secondary {
 	border-bottom: 1px solid #e1e1e1;
 	min-height: 110px;

@@ -14,7 +14,12 @@ class DbPostRepository implements PostRepositoryInterface {
 			$results = $results->search(Request::get('q'));			
 		}
 
-		return $results->paginate($itemNo);
+		return $results->skipToNumber(3)->paginate($itemNo);
+	}
+
+	public function getFeatured($type = 'news')
+	{
+		return Post::orderBy('created_at', 'desc')->whereType($type)->with('post_author')->take(3)->get();
 	}
 
 	public function findBySlug($slug)

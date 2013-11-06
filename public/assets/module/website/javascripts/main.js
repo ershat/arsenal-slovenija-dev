@@ -16,6 +16,15 @@ jQuery(document).ready(function($) {
 	
 	/**
 	*
+	* Carousel
+	*
+	**/
+	$('.carousel').carousel({
+		interval: 3500
+	});
+
+	/**
+	*
 	* Fancybox
 	*
 	**/
@@ -29,6 +38,11 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+	/**
+	*
+	* Editor
+	*
+	**/
 	$("#editIt").click(function(e){
 		e.preventDefault();
 

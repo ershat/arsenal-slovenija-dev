@@ -52,6 +52,19 @@ class Post extends Eloquent {
 
   /**
   *
+  * Scope skip first N items
+  *
+  **/
+  public function scopeSkipToNumber($query, $number)
+  {
+    $featuredItems = Post::orderBy('created_at', 'desc')->take($number)->lists('id');
+
+    return $query->whereNotIn('posts.id', $featuredItems);
+  }
+  
+
+  /**
+  *
   * Images
   *
   **/
