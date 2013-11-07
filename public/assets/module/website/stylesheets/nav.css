@@ -3,11 +3,11 @@
 }
 
 .navigation {
-	background: #b2001a;
+	background: #15212f;
 }
 
 .navigation > .navbar-default {
-	background: none;
+	background: #15212f;
 	border-color: transparent;
 }
 
@@ -31,7 +31,7 @@
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-	background: #15212f;
+	background: #b2001a;
 	color: #fff;
 }
 
