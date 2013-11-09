@@ -54,6 +54,7 @@ jQuery(document).ready(function($) {
 
 			simpleTinyMCE(".editable");
 			extendedTinyMCE("div.editable");
+			imageTinyMCE(".editable-image");
 		}
 
 	});
@@ -117,6 +118,27 @@ function simpleTinyMCE(selector)
     toolbar: simpleToolbar,
     menubar: false,
     save_onsavecallback: tinyMCEOnSave
+	});
+}
+
+/**
+*
+* Image TinyMCE
+*
+**/
+function imageTinyMCE(selector)
+{
+	tinymce.init({
+    selector: selector,
+    plugins: "save image",
+    inline: true,
+    toolbar: "save | image",
+    menubar: false,
+    relative_urls: false,
+    save_onsavecallback: tinyMCEOnSave,
+    external_filemanager_path:"/assets/vendor/filemanager/",
+  	filemanager_title:"Filemanager" ,
+  	external_plugins: { "filemanager" : "/assets/vendor/filemanager/plugin.min.js"}
 	});
 }
 

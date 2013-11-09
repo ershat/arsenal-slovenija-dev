@@ -1,32 +1,81 @@
-<h4>Naslednja tekma</h4>
+<div class="result-widget">
+	<div class="left">
+  	<div class="team-logo">
+			<!-- <img width="85" height="85" src="/images/uploads/borussia.png" class="attachment-post-thumbnail wp-post-image" alt="bvb" style="height: auto;"> -->
+      <span class="editable-image" data-url="{{route('backend.matchSnippets.updateSingle', $last->id)}}" data-name="home_team_image">
+        @if (empty($last->home_team_image))
+          (empty)
+        @else
+          {{$last->home_team_image}}
+        @endif
+      </span>
+    </div> <!-- End .team-logo -->
+    <div class="team-name">
+    	<h3 class="editable" data-url="{{route('backend.matchSnippets.updateSingle', $last->id)}}" data-name="home_team">{{$last->home_team}}</h3>
+    </div> <!-- End .team-name -->
+  </div> <!-- End .left -->
 
-<div class="row" id="nextMatch">
-	<div class="col-md-2">
-		<img src="http://upload.wikimedia.org/wikipedia/sl/a/a5/Lfc_logo.PNG" alt="" style="margin-top: 10px;">
-	</div>
-	<div class="col-md-7">
-		<h3>Liverpool</h3>
-	</div>
-	<div class="col-md-3">
-		<h6 class="pull-right">2.11.2013</h6>
-		<h4 class="pull-right" style="margin: 0;">18:30</h4>			
-	</div>
+  <div class="middle">
+  	<p><span class="editable" data-url="{{route('backend.matchSnippets.updateSingle', $last->id)}}" data-name="home_goals">{{$last->home_goals}}</span> - <span class="editable" data-url="{{route('backend.matchSnippets.updateSingle', $last->id)}}" data-name="away_goals">{{$last->away_goals}}</span></p>
+  </div> <!-- End .middle -->
+
+  <div class="right">
+  	<div class="team-logo">
+    	<!-- <img width="73" height="84" src="/images/uploads/Arsenal_FC.svg" class="attachment-post-thumbnail wp-post-image" alt="arsenal-crest" style="height: auto;"> -->
+      <span class="editable-image" data-url="{{route('backend.matchSnippets.updateSingle', $last->id)}}" data-name="away_team_image">
+        @if (empty($last->away_team_image))
+          (empty)
+        @else
+          {{$last->away_team_image}}
+        @endif
+      </span>
+    </div> <!-- End .team-logo -->
+    <div class="team-name">
+    	<h3 class="editable" data-url="{{route('backend.matchSnippets.updateSingle', $last->id)}}" data-name="away_team">{{$last->away_team}}</h3>
+    </div> <!-- End .team-name -->
+  </div> <!-- End .right -->
 </div>
 
-<hr>
+<div class="clearfix"></div>
 
-<h4>Zadnja tekma</h4>
+<strong class="editable" data-url="{{route('backend.matchSnippets.updateSingle', $next->id)}}" data-name="match_date">{{$next->match_date}}</strong><br>
 
-<div class="row" id="lastMatch">
-	<div class="col-md-2">
-		<img src="http://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg" alt="" style="margin-top: 15px;">
-	</div>
-	<div class="col-md-7">
-		<h3>Chelsea</h3>
-	</div>
-	<div class="col-md-3">
-		<h3 class="pull-right">0-2</h3>			
-	</div>
+<div class="result-widget next">
+	<div class="left">
+  	<div class="team-logo">
+			<!-- <img width="85" height="85" src="/images/uploads/man_united.png" class="attachment-post-thumbnail wp-post-image" alt="bvb" style="height: auto;"> -->
+      <span class="editable-image" data-url="{{route('backend.matchSnippets.updateSingle', $next->id)}}" data-name="home_team_image">
+        @if (empty($next->home_team_image))
+          (empty)
+        @else
+          {{$next->home_team_image}}
+        @endif
+      </span>
+    </div> <!-- End .team-logo -->
+    <div class="team-name">
+      <h3 class="editable" data-url="{{route('backend.matchSnippets.updateSingle', $next->id)}}" data-name="home_team">{{$next->home_team}}</h3>
+    </div> <!-- End .team-name -->
+  </div> <!-- End .left -->
+
+  <div class="middle">
+    <p><span class="editable" data-url="{{route('backend.matchSnippets.updateSingle', $next->id)}}" data-name="home_goals">{{$next->home_goals}}</span> - <span class="editable" data-url="{{route('backend.matchSnippets.updateSingle', $next->id)}}" data-name="away_goals">{{$next->away_goals}}</span></p>
+  </div> <!-- End .middle -->
+
+  <div class="right">
+  	<div class="team-logo">
+    	<!-- <img width="73" height="84" src="/images/uploads/Arsenal_FC.svg" class="attachment-post-thumbnail wp-post-image" alt="arsenal-crest" style="height: auto;"> -->
+      <span class="editable-image" data-url="{{route('backend.matchSnippets.updateSingle', $next->id)}}" data-name="away_team_image">
+        @if (empty($next->away_team_image))
+          (empty)
+        @else
+          {{$next->away_team_image}}
+        @endif
+      </span>
+    </div> <!-- End .team-logo -->
+    <div class="team-name">
+      <h3 class="editable" data-url="{{route('backend.matchSnippets.updateSingle', $next->id)}}" data-name="away_team">{{$next->away_team}}</h3>
+    </div> <!-- End .team-name -->
+  </div> <!-- End .right -->
 </div>
 
-<hr>
+<div class="clearfix"></div>
