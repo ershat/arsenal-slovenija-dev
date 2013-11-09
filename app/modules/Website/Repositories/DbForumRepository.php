@@ -14,13 +14,6 @@ class DbForumRepository implements ForumRepositoryInterface {
 										->get(['tid','last_poster_id','title_seo','title', 'last_post']);
 
 		foreach ($topics as $index => $post) {
-			// Get post ID
-			$id = DB::connection('arsenal.slovenija.forum')
-							->table('posts')
-							->whereTopicId($post->tid)
-							->orderBy('post_date')
-							->pluck('pid');
-
 			// Get data of the member
 			$member = DB::connection('arsenal.slovenija.forum')
 									->table('members')

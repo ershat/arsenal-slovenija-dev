@@ -22,9 +22,6 @@
       <li @if(Str::contains(Route::currentRouteName(), 'backend.posts')) class="active" @endif>
         <a href="/backend/posts">Posts</a>
       </li>
-      <li @if(Str::contains(Route::currentRouteName(), 'backend.snippets')) class="active" @endif>
-        <a href="#">Snippets (not available yet)</a>
-      </li>
     </ul>
 
   </div><!-- /.navbar-collapse -->
