@@ -63,6 +63,17 @@ return array(
 			'prefix'    => '',
 		),
 
+		'arsenal.slovenija.forum' => array(
+			'driver'    => 'mysql',
+			'host'      => 'localhost',
+			'database'  => 'arsenal-slovenija-forum',
+			'username'  => 'dbadmin',
+			'password'  => '0rehova.p0tica',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => 'ipb_',
+		),
+
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
