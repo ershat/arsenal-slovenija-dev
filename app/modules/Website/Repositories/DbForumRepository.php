@@ -1,6 +1,7 @@
 <?php namespace Website\Repositories;
 
 use DB;
+use Carbon\Carbon;
 
 class DbForumRepository implements ForumRepositoryInterface {
 
@@ -22,6 +23,7 @@ class DbForumRepository implements ForumRepositoryInterface {
 
 			$topics[$index]->member_name = $member;
 			$topics[$index]->link = 'http://forum.arsenal-slovenija.si/index.php?/topic/'.$post->tid.'-'.$post->title_seo.'/page__view__getlastpost';
+			$topics[$index]->post_date = Carbon::createFromTimestamp($post->last_post)->addHours(1);
 		}
 
 		return $topics;
