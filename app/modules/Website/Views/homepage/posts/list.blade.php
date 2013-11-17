@@ -23,7 +23,7 @@
 					{{Str::limit(strip_tags($post->content), 150, '...')}}
 	    	@endif
 
-	    	<a href="{{route('posts.show', $post->slug)}}">Preberi več &raquo;</a>
+	    	<a href="{{route('posts.show', $post->slug)}}">Preberi več &raquo;</a>a
 	    </p>
 		</div>
 	</section>
