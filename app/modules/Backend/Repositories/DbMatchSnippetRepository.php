@@ -12,7 +12,7 @@ class DbMatchSnippetRepository implements MatchSnippetRepositoryInterface {
 	public function updateSingle($name, $value, $id)
 	{
 		$page = MatchSnippet::find($id);
-		$page->{$name} = trim($value);
+		$page->{$name} = strip_tags(trim($value));
 
 		return $page->save();	
 	}
