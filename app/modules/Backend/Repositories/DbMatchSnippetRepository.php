@@ -12,8 +12,13 @@ class DbMatchSnippetRepository implements MatchSnippetRepositoryInterface {
 	public function updateSingle($name, $value, $id)
 	{
 		$page = MatchSnippet::find($id);
-		$page->{$name} = strip_tags(trim($value));
 
+		if ($name == 'home_goals' or $name == 'away_goals') {
+			$page->{$name} = strip_tags(trim($value));
+		} else {
+			$page->{$name} = $value;
+		}
+		
 		return $page->save();	
 	}
 	
