@@ -8,11 +8,11 @@
 		</div>
 
 		<div class="article-info">
-	    <h2>
+	    <h2 style="font-size: 1.1em;">
 	    	<a href="{{route('posts.show', $post->slug)}}">{{$post->title}}</a>
 	    </h2>
 	    <p>
-	    	<span style="font-weight: bold; color: #999">
+	    	<span style="color: #999; font-size: .9em;">
 	    	Objavljeno: {{date('d.m.Y H:i', strtotime($post->created_at))}} | 
 	    	Avtor: @if (!empty($post->author_alias)) {{$post->author_alias}} @else {{$post->post_author->username}} @endif
 	    	</span>
