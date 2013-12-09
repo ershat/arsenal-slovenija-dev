@@ -31,6 +31,8 @@ class FacebookController extends \BaseController {
 
 		if (!empty($post->summary)) {
 			$params['description'] = $post->summary;
+		} else {
+			$params['description'] = \Str::limit($post->content, 100, '...');
 		}
 
 		if (!empty($post->photo)) {
