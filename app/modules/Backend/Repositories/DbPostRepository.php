@@ -3,6 +3,7 @@
 use Backend\Models\Post as Post;
 use Backend\Services\PostManipulatorService as PMS;
 use Request;
+use Auth;
 
 class DbPostRepository implements PostRepositoryInterface {
 
@@ -15,7 +16,26 @@ class DbPostRepository implements PostRepositoryInterface {
 			$results = $results->search(Request::get('q'));			
 		}
 
+		if (!isAdmin()) {
+			$results = $results->where(function($query){
+				$query->whereAuthor(Auth::user()->id)->orWhere('author_alias', '=', Auth::user()->name);
+			});
+		}
+
 		return $results->paginate($itemNo);
+	}
+
+	public function getLastPosts($number = 10)
+	{
+		$results = Post::orderBy('created_at', 'desc');
+
+		if (!isAdmin()) {
+			$results = $results->where(function($query){
+				$query->whereAuthor(Auth::user()->id)->orWhere('author_alias', '=', Auth::user()->name);
+			});
+		}
+
+		return $results->take($number)->get();		
 	}
 
 	public function getAll()

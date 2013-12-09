@@ -20,6 +20,10 @@ class PostManipulatorService {
 			$input['photo'] = ImageUpload::make(public_path().'/images/posts/', $file);
 		}
 
+		if (empty($input['author_alias'])) {
+			$input['author_alias'] = \Auth::user()->name;
+		}
+
 		$post = Post::create($input);
 
 		return $post;
@@ -36,6 +40,10 @@ class PostManipulatorService {
 
 		if (isset($file)) {
 			$input['photo'] = ImageUpload::make(public_path().'/images/posts/', $file);
+		}
+
+		if (empty($input['author_alias'])) {
+			$input['author_alias'] = \Auth::user()->name;
 		}
 
 		$post->update($input);
