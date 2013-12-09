@@ -34,7 +34,7 @@ class FacebookController extends \BaseController {
 		}
 
 		if (!empty($post->photo)) {
-			$params['picture'] = 'http://assc.dev/images/posts/'.$post->photo;
+			$params['picture'] = 'http://'.$_SERVER['SERVER_NAME'].'/images/posts/'.$post->photo;
 		}
 
 		echo '
