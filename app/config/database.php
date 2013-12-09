@@ -65,7 +65,7 @@ return array(
 
 		'arsenal.slovenija.forum' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => '192.168.33.12',
 			'database'  => 'arsenal-slovenija-forum',
 			'username'  => 'dbadmin',
 			'password'  => '0rehova.p0tica',
