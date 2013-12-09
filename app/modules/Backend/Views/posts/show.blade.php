@@ -18,6 +18,7 @@
 	  		<div class="pull-right">		
 	  			{{Form::submit('Update', array('class' => 'btn btn-primary'))}}
 	  			<a href="#" class="btn btn-danger" data-toggle="confirm">Delete</a>
+	  			<a href="javascript:void(0);" onclick="window.open('{{route('backend.facebookPost', $post->id)}}','editscreen','scrollbars=no,status=no,menubar=no,toolbar=no,resizable=no,WIDTH=640,HEIGHT=700')" class="btn btn-info">Post on Facebook</a>
 	  		</div>
 
 	  		@include('Backend::posts.form')

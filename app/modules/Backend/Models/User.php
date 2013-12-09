@@ -5,6 +5,8 @@ use Eloquent;
 
 class User extends Eloquent implements UserInterface {
 
+  public $fillable = ['username', 'email', 'password'];
+
 	/**
    * Get the unique identifier for the user.
    *

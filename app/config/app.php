@@ -117,7 +117,7 @@ return array(
 		'Creolab\LaravelModules\ServiceProvider',
 		'Way\Generators\GeneratorsServiceProvider',
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
-		'Intervention\Image\ImageServiceProvider'
+		'Intervention\Image\ImageServiceProvider',
 	),
 
 	/*

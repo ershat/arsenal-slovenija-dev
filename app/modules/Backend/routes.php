@@ -6,6 +6,7 @@ Route::resource('sessions', 'Backend\Controllers\SessionsController', ['only' =>
 
 Route::group(array('prefix' => 'backend', 'before' => 'auth'), function()
 {
+
 	Route::get('/', array('as' => 'backend.home', function()
 	{
 		return View::make('Backend::dashboard.index');
@@ -17,5 +18,11 @@ Route::group(array('prefix' => 'backend', 'before' => 'auth'), function()
 	Route::post('posts/update-single/{id}', array('as' => 'backend.posts.updateSingle', 'uses' => 'Backend\Controllers\PostsController@updateSingle'));
 	Route::resource('posts', 'Backend\Controllers\PostsController');
 	Route::resource('gallery', 'Backend\Controllers\GalleryController');
+
+	// Facebook posting
+	Route::get('facebook-post/{postId}', [
+		'as' => 'backend.facebookPost',
+		'uses' => 'Backend\Controllers\FacebookController@post'
+	]);
 
 });
