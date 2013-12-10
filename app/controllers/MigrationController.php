@@ -22,20 +22,18 @@ class MigrationController extends BaseController
 					$photo = null;
 				}
 
-				var_dump($item->toArray());
-
-				// $newItem = Backend\Models\Post::create([
-				// 	'title' => $desc->Naslov,
-				// 	'type' => 'news',
-				// 	'photo' => $photo,
-				// 	'subtitle' => $desc->Podnaslov,
-				// 	'summary' => $desc->Povzetek,
-				// 	'content' => $desc->Opis,
-				// 	'author' => 3,
-				// 	'author_alias' => $item->avtorCustom,
-				// 	'created_at' => date('Y-m-d H:i:s', strtotime($item->Datum)),
-				// 	'updated_at' => date('Y-m-d H:i:s', strtotime($item->Datum))
-				// ]);
+				$newItem = Backend\Models\Post::create([
+					'title' => $desc->Naslov,
+					'type' => 'news',
+					'photo' => $photo,
+					'subtitle' => $desc->Podnaslov,
+					'summary' => $desc->Povzetek,
+					'content' => $desc->Opis,
+					'author' => 3,
+					'author_alias' => $item->AvtorCustom,
+					'created_at' => date('Y-m-d H:i:s', strtotime($item->Datum)),
+					'updated_at' => date('Y-m-d H:i:s', strtotime($item->Datum))
+				]);
 
 			}
 		}
