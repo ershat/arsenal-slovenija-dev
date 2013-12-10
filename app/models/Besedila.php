@@ -1,4 +1,4 @@
-<?php namespace Migration;
+<?php 
 
 class Besedila extends \Eloquent 
 {
