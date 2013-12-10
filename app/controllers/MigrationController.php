@@ -36,6 +36,7 @@ class MigrationController extends BaseController
 				]);
 
 			}
+		}
 	}
 
 }
