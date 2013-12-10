@@ -14,3 +14,7 @@ Route::get('{slug}/{slug2}/{slug3}/{slug4}', array('uses' => 'Website\Controller
 Route::get('{slug}/{slug2}/{slug3}', array('uses' => 'Website\Controllers\PagesController@show'));
 Route::get('{slug}/{slug2}', array('uses' => 'Website\Controllers\PagesController@show'));
 Route::get('{slug}', array('uses' => 'Website\Controllers\PagesController@show'));
+
+App::error(function(Exception $e){
+	return Redirect::route('home');
+});
