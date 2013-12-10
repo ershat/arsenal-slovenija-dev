@@ -28,7 +28,7 @@ class SessionsController extends \BaseController {
 		$input = Input::all();
 
 		$attempt = Auth::attempt([
-			'email' => $input['email'],
+			'username' => $input['username'],
 			'password' => $input['password']
 		]);
 

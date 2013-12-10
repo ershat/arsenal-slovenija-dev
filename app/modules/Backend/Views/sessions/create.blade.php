@@ -22,8 +22,8 @@
 				@endif
 
 				<div class="form-group">
-			    <label for="email">E-mail</label>
-			    <input type="text" class="form-control" id="email" name="email" placeholder="Enter email">
+			    <label for="username">E-mail</label>
+			    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
 			  </div>
 			  <div class="form-group">
 			    <label for="password">Password</label>

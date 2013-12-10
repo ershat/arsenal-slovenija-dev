@@ -1,12 +1,9 @@
 FRONTPAGE
 ==================================================================
 - Banner for joining the club (more visible)
-- Update the forum widget with new connection data
 
 BACKEND
 ==================================================================
-- Frontpage urejajo samo administratorji
-- Prenos vseh uporabnikov
 - Prenos zadnjih postov
 
 access_token=CAACgf5h1hAwBAIHikbzeGEUfiaXZCtca3LgWEB2MPXE6fF6tairTVO1V9Fts69nMjkJtoSevZB4XR0ZAxgclZAXImZA1IlxkWcBu16YyzqdgZA1oqyWOmZCxuMV8X3GQWbZA86lndQQzgoPzakYIOmKLm2jC4uZAOvwLO7eMroEwkk32yjt2IiaUbHqDhuxpXngkZD&expires=5183823
