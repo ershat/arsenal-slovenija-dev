@@ -22,7 +22,7 @@
 				@endif
 
 				<div class="form-group">
-			    <label for="username">E-mail</label>
+			    <label for="username">Username</label>
 			    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
 			  </div>
 			  <div class="form-group">
