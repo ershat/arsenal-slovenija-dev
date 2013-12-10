@@ -11,72 +11,29 @@ class MigrationController extends BaseController
 
 			var_dump(count($archive));
 
-			// foreach ($archive as $i => $item) {
+			foreach ($archive as $i => $item) {
 
-			// 	if (isset($item->Slika)) {
-			// 		$heroPhoto = '_archive/'.$item->Slika;
-			// 	} else {
-			// 		$heroPhoto = null;
-			// 	}
+				// Find a description for each of the items
+				$desc = Opis::where('BesediloID', $item->BesediloID)->first();
 
-			// 	$newItem = N3\Neo\Models\Admin\Text::create([
-			// 		'name' => $item->Ime,
-			// 		'type' => 'news',
-			// 		'hero_photo' => $heroPhoto,
-			// 		'creator' => 99,
-			// 		'updator' => 99,
-			// 		'created_at' => date('Y-m-d H:i:s', strtotime($item->Datum)),
-			// 		'updated_at' => date('Y-m-d H:i:s', strtotime($item->Datum))
-			// 	]);
+				if (isset($item->Slika)) {
+					$photo = '_archive/'.$item->Slika;
+				} else {
+					$photo = null;
+				}
 
-			// 	$newItem = N3\Neo\Models\Admin\Text::find($newItem->id);
-
-			// 	// Find a description for each of the items
-			// 	$descs = Opis::where('BesediloID', $item->BesediloID)->get();
-
-			// 	foreach ($descs as $j => $desc) {
-					
-			// 		// Switch to lcase langs
-			// 		if ($desc->Jezik == 'Sl') {
-			// 			$desc->Jezik = 'si';
-			// 		}
-
-			// 		$newDesc = N3\Neo\Models\Admin\Text\Locale::create([
-			// 			'text_id' => $newItem->id,
-			// 			'active' => 1,
-			// 			'title' => $desc->Naslov,
-			// 			'subtitle' => $desc->Podnaslov,
-			// 			'summary' => $desc->Povzetek,
-			// 			'data' => $desc->Opis,
-			// 			'locale' => strtolower($desc->Jezik),
-			// 			'creator' => 99,
-			// 			'updator' => 99
-			// 		]);
-
-			// 	}
-
-			// 	// Find photos for item
-			// 	$photos = Slika::where('BesediloID', $item->BesediloID)->get();
-
-			// 	foreach ($photos as $j => $photo) {
-			// 		// Create media
-			// 		$media = N3\Neo\Models\Admin\Media::create([
-			// 			'folder' => '/media/images/gallery/_archive',
-			// 			'filename' => $photo->Datoteka,
-			// 			'extension' => 'jpg',
-			// 			'size' => 0,
-			// 			'creator' => 99,
-			// 			'updator' => 99
-			// 		]);
-
-			// 		$newItem->media()->attach($media->id, [
-			// 			'position' => $photo->Polozaj,
-			// 			'type' => 'gallery',
-			// 			'creator' => 99,
-			// 			'updator' => 99
-			// 		]);
-
-			// 	}
+				$newItem = Backend\Models\Post::create([
+					'title' => $desc->Naslov,
+					'type' => 'news',
+					'photo' => $photo,
+					'subtitle' => $desc->Podnaslov,
+					'summary' => $desc->Povzetek,
+					'content' => $desc->Opis,
+					'author' => 3,
+					'author_alias' => $item->avtorCustom,
+					'created_at' => date('Y-m-d H:i:s', strtotime($item->Datum)),
+					'updated_at' => date('Y-m-d H:i:s', strtotime($item->Datum))
+				]);
 
 			}
 	}
