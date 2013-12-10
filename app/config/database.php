@@ -54,8 +54,8 @@ return array(
 
 		'arsenal.slovenija' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'arsenal-slovenija',
+			'host'      => '192.168.33.12',
+			'database'  => 'assc-page',
 			'username'  => 'dbadmin',
 			'password'  => '0rehova.p0tica',
 			'charset'   => 'utf8',
