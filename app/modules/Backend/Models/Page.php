@@ -28,7 +28,7 @@ class Page extends Eloquent {
   * Fillable
   *
   **/
-  public $fillable = array('title','subtitle','summary','content','template','position','parent_id', 'created_at', 'updated_at');
+  public $fillable = array('title','subtitle','summary','content','template','position','parent_id');
 
   /**
   *

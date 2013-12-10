@@ -28,7 +28,7 @@ class Post extends Eloquent {
   * Fillable
   *
   **/
-  public $fillable = array('type','title','subtitle','summary','content','photo','tags','author','author_alias');
+  public $fillable = array('type','title','subtitle','summary','content','photo','tags','author','author_alias', 'created_at', 'updated_at');
 
   /**
   *
