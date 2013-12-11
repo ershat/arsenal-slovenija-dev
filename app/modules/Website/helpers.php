@@ -18,6 +18,8 @@ function display_post_image($photo, $size = 'med_')
 		return '/images/posts/' . implode('/', $photoArray);
 	}
 
+	var_dump($size);
+
 	if (empty($size)) {
 		$photoArray[count($photoArray) - 1] = 'big_'.$photoArray[count($photoArray) - 1];
 		return '/images/posts/' . implode('/', $photoArray);
