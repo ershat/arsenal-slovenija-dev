@@ -14,6 +14,10 @@ function display_post_image($photo, $size = 'med_')
 	$photoArray = explode('/', $photo);
 	$photoArray[count($photoArray)-1] = $size.$photoArray[count($photoArray) -1];
 
+	if (file_exists(public_path().'/images/posts/'  . implode('/', $photoArray))) {
+		var_dump('file exists');
+	}
+
 	return '/images/posts/' . implode('/', $photoArray);
 
 }

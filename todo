@@ -1,10 +1,12 @@
 FRONTPAGE
 ==================================================================
 - Banner for joining the club (more visible)
+- Dodaj meta tage za Facebook in Twitter (Page in Posts)
+- Prikaz slike na novici...
 
 BACKEND
 ==================================================================
-- Prenos zadnjih postov
+- Prenos zadnjih postov (popravi avtorje glede na avtorCustom polje)
 
 access_token=CAACgf5h1hAwBAIHikbzeGEUfiaXZCtca3LgWEB2MPXE6fF6tairTVO1V9Fts69nMjkJtoSevZB4XR0ZAxgclZAXImZA1IlxkWcBu16YyzqdgZA1oqyWOmZCxuMV8X3GQWbZA86lndQQzgoPzakYIOmKLm2jC4uZAOvwLO7eMroEwkk32yjt2IiaUbHqDhuxpXngkZD&expires=5183823
 
