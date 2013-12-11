@@ -14,15 +14,7 @@ function display_post_image($photo, $size = 'med_')
 	$photoArray = explode('/', $photo);
 	$photoArray[count($photoArray)-1] = $size.$photoArray[count($photoArray) -1];
 
-	if (file_exists(public_path().'/images/posts/'  . implode('/', $photoArray))) {
-		var_dump(empty($size));
-		return '/images/posts/' . implode('/', $photoArray);
-	}
-
-	if (empty($size)) {
-		$photoArray[count($photoArray) - 1] = 'big_'.$photoArray[count($photoArray) - 1];
-		return '/images/posts/' . implode('/', $photoArray);
-	}
+	return '/images/posts/' . implode('/', $photoArray);
 
 }
 
