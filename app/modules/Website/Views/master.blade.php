@@ -4,6 +4,8 @@
 		<title>Arsenal Slovenija</title>
 		<meta charset="utf-8">
 		@include('Website::_partials.head')
+
+		@yield('meta-tags')
 	</head>
 	<body>
 		@include('Website::_partials.header')

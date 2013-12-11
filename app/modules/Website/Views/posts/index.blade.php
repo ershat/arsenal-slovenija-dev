@@ -1,5 +1,17 @@
 @extends('Website::master')
 
+@section('meta-tags')
+
+	@if (!empty($post->photo))
+		<meta property="og:image" content="{{asset(display_post_image($post->photo, ''))}}"/>
+	@endif
+
+	<meta property="og:title" content="{{$post->title}} - Arsenal Slovenija"/>
+	<meta property="og:site_name" content="Arsenal Slovenija"/>
+	<meta property="og:type" content="blog"/>
+
+@stop
+
 @section('app')
 	<div class="container">
 		<div class="col-md-12">
