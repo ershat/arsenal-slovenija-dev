@@ -16,7 +16,7 @@ function display_post_image($photo, $size = 'med_')
 
 	var_dump(public_path().'images/posts/'  . implode('/', $photoArray));
 
-	if (file_exists(public_path().'images/posts/'  . implode('/', $photoArray))) {
+	if (file_exists(public_path().'/images/posts/'  . implode('/', $photoArray))) {
 		var_dump('expression');
 	}
 
