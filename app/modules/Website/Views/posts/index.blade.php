@@ -4,6 +4,7 @@
 
 	@if (!empty($post->photo))
 		<meta property="og:image" content="{{asset(display_post_image($post->photo, ''))}}"/>
+		<meta name="twitter:image" content="{{asset(display_post_image($post->photo, ''))}}">
 	@endif
 
 	<meta property="og:title" content="{{$post->title}} - Arsenal Slovenija"/>
@@ -12,9 +13,14 @@
 
 	@if (!empty($post->summary) and !Str::contains($post->summary, '<img'))
 		<meta property="og:description" content="{{$post->summary}}" />
+		<meta name="twitter:description" content="{{$post->summary}}"">
 	@else
 		<meta property="og:description" content="{{Str::limit(strip_tags($post->content), 100, '...')}}" />	
+		<meta name="twitter:description" content="{{Str::limit(strip_tags($post->content), 100, '...')}}">
 	@endif
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="{{$post->title}} - Arsenal Slovenija">
 
 @stop
 
