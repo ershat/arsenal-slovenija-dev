@@ -15,10 +15,14 @@ function display_post_image($photo, $size = 'med_')
 	$photoArray[count($photoArray)-1] = $size.$photoArray[count($photoArray) -1];
 
 	if (file_exists(public_path().'/images/posts/'  . implode('/', $photoArray))) {
-		var_dump('file exists');
+		return '/images/posts/' . implode('/', $photoArray);
 	}
 
-	return '/images/posts/' . implode('/', $photoArray);
+	$photoArray[count($photoArray)-1] = 'big_';
+
+	if (file_exists(public_path().'/images/posts/'  . implode('/', $photoArray))) {
+		return '/images/posts/' . implode('/', $photoArray);
+	}
 
 }
 
