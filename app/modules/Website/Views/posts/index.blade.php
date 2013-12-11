@@ -10,6 +10,13 @@
 	<meta property="og:site_name" content="Arsenal Slovenija"/>
 	<meta property="og:type" content="blog"/>
 
+	@if (!empty($post->summary) and !Str::contains($post->summary, '<img'))
+		<meta property="og:description" content="{{post->summary}}" />
+	@else
+		<meta property="og:description" content="{{Str::limit(strip_tags($post->content), 100, '...')}}" />
+	@endif
+
+
 @stop
 
 @section('app')
