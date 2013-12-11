@@ -45,6 +45,8 @@
 					{{$post->content}}
 				@endif
 
+				{{display_post_image($post->photo, '')}}
+
 				<footer>
 					Objavljeno: {{date('d.m.Y', strtotime($post->created_at))}} | 
 					Avtor: @if (!empty($post->author_alias)) {{$post->author_alias}} @else {{$post->post_author->username}} @endif
