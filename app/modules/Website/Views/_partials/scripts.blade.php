@@ -11,6 +11,9 @@
 <!-- tiny mce -->
 <script src="{{asset('/assets/vendor/tinymce/tinymce.min.js')}}"></script>
 
+<!-- hoverIntent -->
+<script src="{{asset('/assets/vendor/hoverIntent.js')}}"></script>
+
 <!-- main js -->
 <script src="{{asset('/assets/module/website/javascripts/editing.js')}}"></script>
 <script src="{{asset('/assets/module/website/javascripts/main.js')}}"></script>

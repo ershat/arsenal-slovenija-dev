@@ -30,9 +30,32 @@
 	text-transform: uppercase;
 }
 
+.navbar-default .navbar-nav>li>a.over {
+	background: #b2001a;
+}
+
 .navbar-default .navbar-nav>li>a:hover {
 	background: #b2001a;
 	color: #fff;
+}
+
+.navbar-submenu {
+	position: absolute; 
+	width: 250px; 
+	padding: 5px; 
+	background: #b2001a;
+	display: none;
+}
+
+.navbar-submenu ul { list-style-type: none; margin: 0; padding: 0; }
+.navbar-submenu ul li a {
+	color: #fff;
+	padding: 5px;
+	display: block;
+}
+
+.navbar-submenu ul li a:hover {
+	text-decoration: underline;
 }
 
 .form-search {

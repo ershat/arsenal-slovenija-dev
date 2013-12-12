@@ -19,7 +19,19 @@
         <li><a href="/">Naslovnica</a></li>
         @foreach($navigation as $index => $item)
           <li>
-            <a href="@if(!empty($item->subtitle) and Str::contains($item->subtitle, 'http://')){{$item->subtitle}}" target="_blank"@else/{{$item->slug}}"@endif>{{$item->title}}</a>
+            <a href="@if(!empty($item->subtitle) and Str::contains($item->subtitle, 'http://')){{$item->subtitle}}" target="_blank"@else/{{$item->slug}}"@endif class="link">{{$item->title}}</a>
+
+            @if (count($item->children))
+              <div class="navbar-submenu">
+                <ul>
+                  @foreach($item->children as $j => $subpage)
+                    <li>
+                      <a href="/{{$item->slug}}/{{$subpage->slug}}">{{$subpage->title}}</a>
+                    </li>
+                  @endforeach
+                </ul>         
+              </div>
+            @endif
           </li>
         @endforeach
         <li>

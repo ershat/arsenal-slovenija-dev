@@ -43,4 +43,16 @@ jQuery(document).ready(function($) {
 		}
 	});
 
+	// Menu on hover
+	$(".nav li").hoverIntent(
+		function(){
+			$(this).find("a").addClass("over");
+			$(this).find(".navbar-submenu").slideDown();
+		},
+		function(){
+			$(this).find("a").removeClass("over");
+			$(this).find(".navbar-submenu").hide();
+		}
+	);
+
 });
