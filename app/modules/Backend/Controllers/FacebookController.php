@@ -20,7 +20,7 @@ class FacebookController extends \BaseController {
 		$post = $this->post->findById($postId);
 
 		$params = [
-			'message' => Config::get('facebook.messageText'),
+			'message' => $post->title,
 			'name' => $post->title,
 			'link' => 'http://'.$_SERVER['SERVER_NAME'].'/novice/'.$post->slug,
 		];
