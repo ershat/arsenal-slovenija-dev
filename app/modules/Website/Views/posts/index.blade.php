@@ -70,7 +70,7 @@
 				@endif
 
 				<footer>
-					Objavljeno: {{date('d.m.Y', strtotime($post->created_at))}} | 
+					Objavljeno: {{date('d.m.Y H:i', strtotime($post->created_at))}} | 
 					Avtor: @if (!empty($post->author_alias)) {{$post->author_alias}} @else {{$post->post_author->username}} @endif
 					<div class="clearfix"></div>
 
