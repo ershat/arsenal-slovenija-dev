@@ -14,7 +14,11 @@ class DbPostRepository implements PostRepositoryInterface {
 			$results = $results->search(Request::get('q'));			
 		}
 
-		return $results->skipToNumber(3)->paginate($itemNo);
+		if ($type == 'news') {
+			$results = $results->skipToNumber(3);
+		}
+
+		return $results->paginate($itemNo);
 	}
 
 	public function getFeatured($type = 'news')
