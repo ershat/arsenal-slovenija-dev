@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+use Illuminate\Support\Facades\App;
 
 App::bind('Website\Repositories\PageRepositoryInterface', 'Website\Repositories\DbPageRepository');
 App::bind('Website\Repositories\PostRepositoryInterface', 'Website\Repositories\DbPostRepository');

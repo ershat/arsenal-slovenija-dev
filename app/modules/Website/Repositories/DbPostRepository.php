@@ -7,6 +7,8 @@ class DbPostRepository implements PostRepositoryInterface {
 
 	public function getPaginated($itemNo, $type = 'news')
 	{
+		var_dump($type);
+
 		$results = Post::orderBy('created_at', 'desc')->whereType($type)->with('post_author');
 		$keyword = Request::get('q');
 
