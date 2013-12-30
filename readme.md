@@ -1,12 +1,22 @@
 arsenal-slovenija-dev
 =====================
 
-Development of a supporters club website. (edited from the work computer)
+A repo for the supporters club website.
 
 ### Todo
 
 * User manager in backend
-* Post list (certain type) in website
+* Matches editing in the backend
+* Matches list (next, last, results, etc.)
+
+### Matches
+
+* CRUD on matches
+* Every match has 2 teams which are typed manually for now
+* All data typed manually for now, later we will upgrade to dynamic data (teams, seasons, etc.)
+* Upload images of club crests to then display on page...
+* Link a preview or report to a match (post) and show correctly on the website...
+* 2 new tables: matches and matches_posts
 
 ### Features
 
@@ -14,19 +24,6 @@ Development of a supporters club website. (edited from the work computer)
 * Frontend (homepage, posts, supporters club, arsenal, reports and photos etc.)
 * Frontend editing (inline)
 * Post commenting with Disqus
-* more to follow...
-
-### Database
-
-The app uses a MySQL database. Table list is as follows (alphabetical order):
-
-* pages
-* posts
-* users
-
-In the process of development new tables may be added, therefore this list may change based on the needs of the app.
-
-### Info
 
 ##### Development team
 * Lovro Papež / lovro.papez@gmail.com / http://www.twitter.com/slovenianGooner
