@@ -12,6 +12,7 @@ Route::group(array('prefix' => 'backend', 'before' => 'auth'), function()
 		return View::make('Backend::dashboard.index');
 	}));
 
+	Route::resource('matches', 'Backend\Controllers\MatchesController');
 	Route::post('match-snippets/update-single/{id}', array('as' => 'backend.matchSnippets.updateSingle', 'uses' => 'Backend\Controllers\MatchSnippetsController@updateSingle'));
 	Route::post('pages/update-single/{id}', array('as' => 'backend.pages.updateSingle', 'uses' => 'Backend\Controllers\PagesController@updateSingle'));
 	Route::resource('pages', 'Backend\Controllers\PagesController');

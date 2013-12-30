@@ -24,6 +24,11 @@
       <li @if(Str::contains(Route::currentRouteName(), 'backend.posts')) class="active" @endif>
         <a href="/backend/posts">Posts</a>
       </li>
+      @if(isAdmin())
+        <li @if(Str::contains(Route::currentRouteName(), 'backend.matches')) class="active" @endif>
+          <a href="/backend/matches">Matches</a>
+        </li>
+      @endif
     </ul>
 
   </div><!-- /.navbar-collapse -->
