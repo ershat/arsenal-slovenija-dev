@@ -13,7 +13,7 @@ class WebsiteForumComposer {
 
 	public function compose($view)
 	{
-		$view->with('forumPosts', $this->forum->getPosts());
+		$view->with('forumPosts', $this->forum->getPosts(10));
 	}
 
 }

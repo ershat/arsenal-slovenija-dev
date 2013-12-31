@@ -11,7 +11,7 @@ class DbForumRepository implements ForumRepositoryInterface {
 		$topics = DB::connection('arsenal.slovenija.forum')
 										->table('topics')
 										->orderBy('last_post', 'desc')
-										->take(5)
+										->take($limit)
 										->get(['tid','last_poster_id','title_seo','title', 'last_post']);
 
 		foreach ($topics as $index => $post) {

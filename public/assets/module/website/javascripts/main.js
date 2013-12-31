@@ -55,4 +55,21 @@ jQuery(document).ready(function($) {
 		}
 	);
 
+	// Forum posts open
+	$(".hiddenForumControl").click(function(e){
+		e.preventDefault();
+
+		if ($(this).hasClass('open')) {
+			$(this).removeClass('open');
+			$(this).find('.hiddenForumControlHide').hide();
+			$(this).find('.hiddenForumControlShow').show();
+			$('.hiddenForumPosts').slideUp();
+		} else {
+			$(this).addClass('open');
+			$(this).find('.hiddenForumControlShow').hide();
+			$(this).find('.hiddenForumControlHide').show();
+			$('.hiddenForumPosts').slideDown();
+		}
+	});
+
 });

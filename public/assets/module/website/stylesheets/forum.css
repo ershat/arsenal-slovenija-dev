@@ -1,0 +1,11 @@
+.hiddenForumPosts {
+	display: none;
+}
+
+.hiddenForumControl {
+	display: block;
+}
+
+.hiddenForumControlHide {
+	display: none;
+}
