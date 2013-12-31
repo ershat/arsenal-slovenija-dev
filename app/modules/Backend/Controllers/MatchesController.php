@@ -46,7 +46,7 @@ class MatchesController extends \BaseController {
 			return Redirect::back()->withErrors($this->validator->errors())->withInput();
 		}
 
-		$match = $this->match->create(Input::except('_token'));
+		$match = $this->match->create(Input::except('_token'), Input::file('home_team_image'), Input::file('away_team_image'));
 
 		return Redirect::route('backend.matches.show', $match->id);
 	}
@@ -76,7 +76,7 @@ class MatchesController extends \BaseController {
 			return Redirect::back()->withErrors($this->validator->errors())->withInput();
 		}
 
-		$match = $this->match->update(Input::except('_token'), $id);
+		$match = $this->match->update(Input::except('_token'), $id, Input::file('home_team_image'), Input::file('away_team_image'));
 
 		return Redirect::route('backend.matches.show', $match->id);
 	}

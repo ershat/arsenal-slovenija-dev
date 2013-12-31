@@ -20,11 +20,11 @@ class MatchesFormComposer {
 		));
 
 		$view->with('competitions', array(
-			'FA Cup' => 'fa-cup',
-			'Premier League' => 'premier-league',
-			'Champions League' => 'champions-league',
-			'League Cup' => 'league-cup', 
-			'Friendly' => 'friendly'
+			'FA Cup' => 'FA Cup',
+			'Premier League' => 'Premier League',
+			'Champions League' => 'Champions League',
+			'League Cup' => 'League Cup', 
+			'Friendly' => 'Friendly'
 		));
 
 	}

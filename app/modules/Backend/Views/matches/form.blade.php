@@ -21,13 +21,18 @@
 	<div class="form-group">
 		{{Form::label('home_team_image', 'Home Team Image')}}
 		{{Form::file('home_team_image', null, array('class' => 'form-control'))}}
+		<br>
+		@if (isset($match->home_team_image) and !empty($match->home_team_image))
+			<a href="{{asset('/images/matches/'.$match->home_team_image)}}" target="_blank">View uploaded photo</a>
+			<br>
+		@endif
 	</div>	
 
 	<hr>
 
 	<div class="form-group">
 		{{Form::label('season', 'Season')}}
-		@if (isset($post->season))
+		@if (isset($match->season))
 			{{Form::select('season', $seasons, $match->season, array('class' => 'form-control'))}}
 		@else
 			{{Form::select('season', $seasons, null, array('class' => 'form-control'))}}
@@ -35,7 +40,7 @@
 	</div>
 
 	<div class="form-group">
-		{{Form::label('competition', 'competition')}}
+		{{Form::label('competition', 'Competition')}}
 		@if (isset($match->competition))
 			{{Form::select('competition', $competitions, $match->competition, array('class' => 'form-control'))}}
 		@else
@@ -60,11 +65,34 @@
 	<div class="form-group">
 		{{Form::label('away_team_image', 'Away Team Image')}}
 		{{Form::file('away_team_image', null, array('class' => 'form-control'))}}
+
+		<br>
+		@if (isset($match->away_team_image) and !empty($match->away_team_image))
+			<a href="{{asset('/images/matches/'.$match->away_team_image)}}" target="_blank">View uploaded photo</a>
+			<br>
+		@endif
+
 	</div>	
 
 	<hr>
 
+	<div class="form-group">
+		{{Form::label('date', 'Date')}}
+		@if (isset($match->time))
+			<input type="date" name="date" class="form-control" value="{{date('Y-m-d', strtotime($match->time))}}">
+		@else
+			<input type="date" name="date" class="form-control" value="{{date('Y-m-d')}}">
+		@endif
+	</div>
 
+	<div class="form-group">
+		{{Form::label('time', 'Time')}}
+		@if (isset($match->time))
+			<input type="time" name="time" class="form-control" value="{{date('H:i', strtotime($match->time))}}">
+		@else
+			<input type="time" name="time" class="form-control" value="{{date('H:i')}}">
+		@endif
+	</div>	
 
 </div>
 

@@ -27,45 +27,39 @@ class DbMatchRepository implements MatchRepositoryInterface {
 
 	public function getLastPosts($number = 10)
 	{
-		$results = Match::orderBy('created_at', 'desc');
-
-		if (!isAdmin()) {
-			$results = $results->where(function($query){
-				$query->whereAuthor(Auth::user()->id)->orWhere('author_alias', '=', Auth::user()->name);
-			});
-		}
+		$results = Match::orderBy('time', 'desc');
 
 		return $results->take($number)->get();		
 	}
 
 	public function getAll()
 	{
-		return Post::all();
+		return Match::all();
 	}
 
 	public function getAllReversed()
 	{
-		return Post::orderBy('id','desc')->get();
+		return Match::orderBy('id','desc')->get();
 	}
 
 	public function findById($id)
 	{
-		return Post::find($id);
+		return Match::find($id);
 	}
 
-	public function create($input, $file = null)
+	public function create($input, $homeTeamLogo = null, $awayTeamLogo = null)
 	{
-		return PMS::create($input, $file);
+		return MMS::create($input, $homeTeamLogo, $awayTeamLogo);
 	}
 
-	public function update($input, $id, $file = null)
+	public function update($input, $id, $homeTeamLogo = null, $awayTeamLogo = null)
 	{
-		return PMS::update($input, $id, $file);
+		return MMS::update($input, $id, $homeTeamLogo, $awayTeamLogo);
 	}
 
 	public function updateSingle($name, $value, $id)
 	{
-		return PMS::updateSingle($name, $value, $id);
+		return MMS::updateSingle($name, $value, $id);
 	}
 
 }

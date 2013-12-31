@@ -12,9 +12,9 @@
 {{fake_row()}}
 
 <ul class="list-group">
-	@foreach($matches as $index => $post)
+	@foreach($matches as $index => $match)
 		<li class="list-group-item">
-			<a href="{{route('backend.matches.show', $post->id)}}?page={{$matches->getCurrentPage()}}@if (Request::has('q'))&q={{Request::get('q')}}@endif">{{$match->home_team}} {{$match->away_team}} ({{$match->time}})</a><br>
+			<a href="{{route('backend.matches.show', $match->id)}}?page={{$matches->getCurrentPage()}}@if (Request::has('q'))&q={{Request::get('q')}}@endif">{{$match->home_team}} - {{$match->away_team}} ({{date('d.m.Y', strtotime($match->time))}})</a><br>
 		</li>
 	@endforeach
 </ul>	
