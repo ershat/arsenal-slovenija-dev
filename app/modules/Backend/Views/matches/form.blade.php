@@ -19,6 +19,13 @@
 	</div>
 
 	<div class="form-group">
+		{{Form::label('home_team_image', 'Home Team Image')}}
+		{{Form::file('home_team_image', null, array('class' => 'form-control'))}}
+	</div>	
+
+	<hr>
+
+	<div class="form-group">
 		{{Form::label('season', 'Season')}}
 		@if (isset($post->season))
 			{{Form::select('season', $seasons, $match->season, array('class' => 'form-control'))}}
@@ -49,6 +56,14 @@
 		{{Form::label('away_goals', 'Away Goals')}}
 		{{Form::text('away_goals', null, array('class' => 'form-control'))}}
 	</div>
+
+	<div class="form-group">
+		{{Form::label('away_team_image', 'Away Team Image')}}
+		{{Form::file('away_team_image', null, array('class' => 'form-control'))}}
+	</div>	
+
+	<hr>
+
 
 
 </div>
