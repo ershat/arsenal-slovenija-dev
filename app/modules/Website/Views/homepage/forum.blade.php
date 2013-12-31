@@ -22,7 +22,7 @@
 
 <br>
 
-<a href="#" class="hiddenForumControl text-center" title="Pokaži več...">
+<a href="#" class="hiddenForumControl text-center btn btn-danger" title="Pokaži več...">
 	<div class="hiddenForumControlShow">
 		Prikaži več
 		<span class="glyphicon glyphicon-chevron-down"></span>		
