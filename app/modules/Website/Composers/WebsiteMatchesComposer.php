@@ -1,19 +1,19 @@
 <?php namespace Website\Composers;
 
-use Website\Repositories\MatchSnippetRepositoryInterface;
+use Website\Repositories\MatchRepositoryInterface;
 
 class WebsiteMatchesComposer {
 
-	protected $matchSnippet;
+	protected $match;
 
-	public function __construct(MatchSnippetRepositoryInterface $matchSnippet)
+	public function __construct(MatchRepositoryInterface $match)
 	{
-		$this->matchSnippet = $matchSnippet;
+		$this->match = $match;
 	}
 
 	public function compose($view)
 	{
-		$view->with('last', $this->matchSnippet->getLast())->with('next', $this->matchSnippet->getNext());
+		$view->with('last', $this->match->getLast())->with('next', $this->match->getNext());
 	}
 
 }
