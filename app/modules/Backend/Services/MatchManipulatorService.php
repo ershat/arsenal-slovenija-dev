@@ -16,6 +16,14 @@ class MatchManipulatorService {
 
 	public static function create($input, $homeTeamImage = null, $awayTeamImage = null)
 	{
+		if (empty($input['home_goals'])) {
+			$input['home_goals'] = 0;
+		}
+
+		if (empty($input['away_goals'])) {
+			$input['away_goals'] = 0;
+		}
+
 		$input['time'] = $input['date'].' '.$input['time'];
 
 		if (isset($homeTeamImage)) {
@@ -34,6 +42,14 @@ class MatchManipulatorService {
 	public static function update($input, $id, $homeTeamImage = null, $awayTeamImage = null)
 	{
 		$match = Match::find($id);
+
+		if (empty($input['home_goals'])) {
+			$input['home_goals'] = 0;
+		}
+
+		if (empty($input['away_goals'])) {
+			$input['away_goals'] = 0;
+		}
 
 		$input['time'] = $input['date'].' '.$input['time'];
 
