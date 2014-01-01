@@ -57,3 +57,117 @@
 	text-align: center;
 	margin-top: 26px;
 }
+
+/* FULL SITE MATCH DETAIL */
+.live-match-info {
+	height: 80px;
+	position: relative;
+	background: #363e4a;
+}
+
+.live-match-info p {
+	line-height: 80px;
+	position: absolute;
+	left: 82px;
+	top: 0;
+	margin: 0;
+	font-size: 16px;
+	color: #fff;
+}
+
+.live-match-info figure {
+	height: 80px;
+	line-height: 80px;
+	position: absolute;
+	right: 72px;
+	top: 0;
+	font-size: 16px;
+	color: #fff;
+}
+
+.live-match-fixture {
+	position: relative;
+	height: 220px;
+}
+
+.live-match-fixture .stadium {
+	position: absolute;
+	margin: 0;
+	overflow: hidden;
+	width: 100%;
+	height: 220px;
+}
+
+.live-match-fixture .stadium img {
+	float: right;
+	height: 220px;
+}
+
+.live-match-fixture .stadium-mask {
+	position: absolute;
+	margin: 0;
+	width: 100%;
+	height: 220px;
+	background: url('/assets/module/website/images/match-header/stadium-mask.png') 0 0 no-repeat;
+}
+
+.live-match-fixture .versus {
+	position: absolute;
+	padding: 0;
+	background: none;
+}
+
+.versus.score {
+	height: 210px;
+}
+
+.versus {
+	width: 60%;
+	padding: 0 20px;
+	margin: 30px 0 0 74px;
+	display: block;
+}
+
+.versus table {
+	width: 100%;
+}
+
+.versus table td.crest {
+	width: 101px;
+}
+
+.versus table td.crest img {
+	height: 80px;
+}
+
+.versus table td {
+	height: 152px;
+	vertical-align: middle;
+}
+
+.versus table td.club-name {
+	width: 150px;
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+	position: relative;
+}
+
+.versus table td.right {
+	text-align: right;
+}
+
+.versus table .score {
+	width: 97px;
+	padding: 0 28px;
+}
+
+.versus table .score table {
+	width: 100%;
+	font-size: 44px;
+	font-weight: 500;
+	line-height: normal;
+	text-align: center;
+	color: #fff;
+	margin-top: 1px;
+}

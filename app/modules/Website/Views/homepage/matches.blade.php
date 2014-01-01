@@ -9,9 +9,9 @@
       </div> <!-- End .team-name -->
     </div> <!-- End .left -->
 
-    <div class="middle">
+    <a href="/tekme/{{$last->slug}}" class="middle">
     	<p>{{$last->home_goals}} - {{$last->away_goals}}</p>
-    </div> <!-- End .middle -->
+    </a> <!-- End .middle -->
 
     <div class="right">
     	<div class="team-logo">
@@ -39,9 +39,9 @@
       </div> <!-- End .team-name -->
     </div> <!-- End .left -->
 
-    <div class="middle">
+    <a href="/tekme/{{$next->slug}}" class="middle">
       <p>{{$next->home_goals}} - {{$next->away_goals}}</p>
-    </div> <!-- End .middle -->
+    </a> <!-- End .middle -->
 
     <div class="right">
     	<div class="team-logo">

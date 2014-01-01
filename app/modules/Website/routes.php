@@ -6,6 +6,8 @@ Route::get('migration', 'MigrationController@show');
 Route::get('/', array('as' => 'home', 'uses' => 'Website\Controllers\HomepageController@index'));
 
 Route::get('novice/{slug}', array('as' => 'posts.show', 'uses' => 'Website\Controllers\PostsController@show'));
+Route::get('tekme/{slug}', array('as' => 'matches.show', 'uses' => 'Website\Controllers\MatchesController@show'));
+Route::get('tekme', array('as' => 'matches.index', 'uses' => 'Website\Controllers\MatchesController@index'));
 Route::get('arsenal/legende-kluba/{slug}', array('as' => 'posts.legends.show', 'uses' => 'Website\Controllers\PostsController@show'));
 Route::get('reportaze-in-slike/{slug}', array('as' => 'posts.reports.show', 'uses' => 'Website\Controllers\PostsController@show'));
 

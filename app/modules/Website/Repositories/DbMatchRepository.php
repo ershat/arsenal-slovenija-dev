@@ -13,5 +13,22 @@ class DbMatchRepository implements MatchRepositoryInterface {
 	{
 		return Match::where('time', '>=', date('Y-m-d H:i:s'))->orderBy('time')->first();
 	}
+
+	public function findBySlug($slug)
+	{
+		return Match::whereSlug($slug)->firstOrFail();
+	}
+
+	public function getPaginated($itemNo)
+	{
+		$results = Match::orderBy('time', 'desc');
+		$keyword = Request::get('q');
+
+		if (Request::has('q')){
+			$results = $results->search(Request::get('q'));			
+		}
+
+		return $results->paginate($itemNo);
+	}
 	
 }
