@@ -9,19 +9,13 @@ class DbMatchRepository implements MatchRepositoryInterface {
 
 	public function getPaginated($itemNo)
 	{
-		$results = Match::orderBy('created_at', 'desc');
+		$results = Match::orderBy('time', 'desc');
 		$keyword = Request::get('q');
 
 		if (Request::has('q')){
 			$results = $results->search(Request::get('q'));			
 		}
-
-		if (!isAdmin()) {
-			$results = $results->where(function($query){
-				$query->whereAuthor(Auth::user()->id)->orWhere('author_alias', '=', Auth::user()->name);
-			});
-		}
-
+		
 		return $results->paginate($itemNo);
 	}
 
