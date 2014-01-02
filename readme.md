@@ -10,8 +10,6 @@ A repo for the supporters club website.
 ### Matches
 
 * All data typed manually for now, later we will upgrade to dynamic data (teams, seasons, etc.)
-* Ability to choose the match the article is linked to...
-* Display articles linked to a match below the match data
 * Display match info on specific article if it's linked to a match
 
 ### Features
