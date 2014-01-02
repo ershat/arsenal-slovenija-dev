@@ -30,9 +30,13 @@
 
 			<article>
 
-				<a href="{{URL::previous()}}">&laquo; Nazaj</a><br><br>
-
 				<header>
+					@if ($post->match)
+						<?php $match = $post->match ?>
+						@include('Website::matches.fixture-info')
+						<hr>
+					@endif
+
 					@if (!Auth::guest())
 						<h3 class="editable" data-url="{{route('backend.posts.updateSingle', $post->id)}}" data-name="title">{{$post->title}}</h3>
 					@else
@@ -41,6 +45,8 @@
 				</header>
 
 				<aside>
+					<a href="{{URL::previous()}}">&laquo; Nazaj</a><br><br>
+
 				  <a type="button" class="btn btn-primary btn-sm btn-block" href="#" onclick="{{display_fb_share_link($post->title)}}">
 				  	Deli na Facebook
 				  </a>
