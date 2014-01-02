@@ -20,7 +20,7 @@ class MatchesController extends \BaseController {
 	 */
 	public function show($slug)
 	{
-		return View::make('Website::matches.show')->withMatch($this->match->findBySlug($slug));
+		return View::make('Website::matches.show')->withMatch($this->match->findBySlug($slug, true));
 	}
 
 	public function index()

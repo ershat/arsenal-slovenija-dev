@@ -73,4 +73,14 @@ class Post extends Eloquent {
     return $this->morphMany('Backend\Models\Image', 'imageable');
   }
 
+  /**
+  *
+  * Match
+  *
+  **/
+  public function match()
+  {
+    return $this->belongsTo('Backend\Models\Match');
+  }
+
 }

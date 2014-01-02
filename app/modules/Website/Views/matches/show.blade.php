@@ -92,6 +92,36 @@
 				</aside>
 				
 				<hr>
+
+				<h3>Novice</h3>
+
+				@foreach($match->posts as $index => $post)
+					<section class="secondary">
+					  <div class="article-image">
+							<img src="{{display_post_image($post->photo, 'sm_')}}" class="thumbnail">
+							<a href="/novice/{{$post->slug}}">
+								<span>{{$post->title}}</span>
+							</a>    
+						</div>
+
+						<div class="article-info">
+					    <h2>
+					    	<a href="/novice/{{$post->slug}}">{{$post->title}}</a>
+					    </h2>
+					    <p>
+					    	@if (!empty($post->summary) and !Str::contains($post->summary, '<img'))
+					    		{{$post->summary}}
+					    	@else
+									{{Str::limit(strip_tags($post->content), 150, '...')}}
+					    	@endif
+
+					    	<a href="/novice/{{$post->slug}}">Preberi več &raquo;</a>
+					    </p>
+						</div>
+					</section>
+				@endforeach
+
+				<hr>
 				<div class="comments">
 					<div id="disqus_thread"></div>
 				</div>

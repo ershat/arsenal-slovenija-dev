@@ -44,5 +44,15 @@ class Match extends Eloquent {
 
     return $query->whereNotIn('posts.id', $featuredItems);
   }
+
+  /**
+  *
+  * Posts
+  *
+  **/
+  public function posts()
+  {
+    return $this->hasMany('Backend\Models\Post');
+  }
   
 }
