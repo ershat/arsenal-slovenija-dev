@@ -50,8 +50,13 @@
 	</div>
 
 	<div class="form-group">
-		{{Form::label('tags', 'Tags')}}
-		{{Form::text('tags', null, array('class' => 'form-control'))}}
+		{{Form::label('match_id', 'Match')}}
+		<select name="match_id" id="match_id" class="form-control">
+			<option value="">[none]</option>
+			@foreach($matches as $index => $match)
+				<option value="{{$match->id}}" @if(isset($post->match_id) and $post->match_id == $match->id) selected @endif>{{$match->home_team}} - {{$match->away_team}} ({{date('d.m.Y', strtotime($match->time))}})</option>
+			@endforeach
+		</select>
 	</div>
 
 </div>

@@ -31,6 +31,11 @@ class DbMatchRepository implements MatchRepositoryInterface {
 		return Match::all();
 	}
 
+	public function getFirstLatest($limit)
+	{
+		return Match::orderBy('time','desc')->take($limit)->get();
+	}
+
 	public function getAllReversed()
 	{
 		return Match::orderBy('id','desc')->get();
