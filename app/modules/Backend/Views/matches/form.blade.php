@@ -48,6 +48,11 @@
 		@endif
 	</div>
 
+	<div class="form-group">
+		{{Form::label('scorers', 'Scorers')}}
+		{{Form::textarea('scorers', null, array('class' => 'form-control'))}}			
+	</div>
+
 </div>
 
 <div class="col-md-6">

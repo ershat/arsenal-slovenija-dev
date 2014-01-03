@@ -124,7 +124,7 @@
 .versus {
 	width: 60%;
 	padding: 0 20px;
-	margin: 30px 0 0 74px;
+	margin: 10px 0 0 74px;
 	display: block;
 }
 
@@ -169,4 +169,8 @@
 	text-align: center;
 	color: #fff;
 	margin-top: 1px;
+}
+
+.scorers {
+	color: #fff;
 }

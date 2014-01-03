@@ -14,28 +14,32 @@
       <div class="stadium-mask"></div>
     </figure>
     <div class="versus score">
-        <table>
-          <tbody>
-          	<tr>
-              <td class="crest"><img src="/images/matches/{{$match->home_team_image}}"></td>
-              <td class="right club-name">{{$match->home_team}}</td>
-              <td class="score">
-                <table>
-                  <tbody>
-                  	<tr>
-                      <td class="red">{{$match->home_goals}}</td>
-                      <td class="grey">-</td>
-                      <td>{{$match->away_goals}}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </td>
-              <td class="left club-name">{{$match->away_team}}</td>
-              <td class="crest right"><img src="/images/matches/{{$match->away_team_image}}"></td>
-            </tr>
+      <table>
+        <tbody>
+        	<tr>
+            <td class="crest"><img src="/images/matches/{{$match->home_team_image}}"></td>
+            <td class="right club-name">
+              {{$match->home_team}}
+            </td>
+            <td class="score">
+              <table>
+                <tbody>
+                	<tr>
+                    <td class="red">{{$match->home_goals}}</td>
+                    <td class="grey">-</td>
+                    <td>{{$match->away_goals}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td class="left club-name">{{$match->away_team}}</td>
+            <td class="crest right"><img src="/images/matches/{{$match->away_team_image}}"></td>
+          </tr>
         </tbody>
       </table>
-
+      <p class="scorers">
+        {{$match->scorers}}
+      </p>
     </div>
     <!--/versus score -->
 
