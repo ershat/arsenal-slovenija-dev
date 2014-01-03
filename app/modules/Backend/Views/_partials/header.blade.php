@@ -29,6 +29,11 @@
           <a href="/backend/matches">Matches</a>
         </li>
       @endif
+      @if(isAdmin())
+        <li @if(Str::contains(Route::currentRouteName(), 'backend.table')) class="active" @endif>
+          <a href="/backend/table">Table</a>
+        </li>
+      @endif
     </ul>
 
   </div><!-- /.navbar-collapse -->
