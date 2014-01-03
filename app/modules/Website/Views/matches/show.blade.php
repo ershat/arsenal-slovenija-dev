@@ -53,7 +53,7 @@
 
 				<h3>Novice</h3>
 
-				@foreach($match->posts as $index => $post)
+				@foreach($match->posts()->orderBy('created_at', 'desc')->get() as $index => $post)
 					<section class="secondary">
 					  <div class="article-image">
 							<img src="{{display_post_image($post->photo, 'sm_')}}" class="thumbnail">
