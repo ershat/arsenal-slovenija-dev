@@ -22,7 +22,7 @@
 
 <br>
 
-<a href="#" class="hiddenForumControl text-center btn btn-danger" title="Pokaži več...">
+<a href="#" class="hiddenForumControl btn btn-danger btn-xs pull-right" title="Pokaži več...">
 	<div class="hiddenForumControlShow">
 		Prikaži več
 		<span class="glyphicon glyphicon-chevron-down"></span>		
@@ -32,5 +32,7 @@
 		<span class="glyphicon glyphicon-chevron-up"></span>		
 	</div>
 </a>
+
+<div class="clearfix"></div>
 
 <hr>
