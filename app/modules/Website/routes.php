@@ -17,8 +17,8 @@ Route::get('{slug}/{slug2}/{slug3}', array('uses' => 'Website\Controllers\PagesC
 Route::get('{slug}/{slug2}', array('uses' => 'Website\Controllers\PagesController@show'));
 Route::get('{slug}', array('uses' => 'Website\Controllers\PagesController@show'));
 
-// App::error(function(Exception $e){
-// 	if (!App::environment('local')) {
-// 		return Redirect::route('home');
-// 	}
-// });
+App::error(function(Exception $e){
+	if (!App::environment('local')) {
+		return Redirect::route('home');
+	}
+});
