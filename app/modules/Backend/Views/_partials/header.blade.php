@@ -30,8 +30,8 @@
         </li>
       @endif
       @if(isAdmin())
-        <li @if(Str::contains(Route::currentRouteName(), 'backend.table')) class="active" @endif>
-          <a href="/backend/table">Table</a>
+        <li @if(Str::contains(Route::currentRouteName(), 'backend.standings')) class="active" @endif>
+          <a href="/backend/standings">Standings</a>
         </li>
       @endif
     </ul>

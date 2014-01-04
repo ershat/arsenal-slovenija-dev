@@ -12,4 +12,5 @@
 <script src="{{asset('/assets/vendor/plupload/js/plupload.full.js')}}"></script>
 
 <!-- main -->
+<script src="{{asset('/assets/module/backend/javascripts/editing.js')}}"></script>
 <script src="{{asset('/assets/module/backend/javascripts/main.js')}}"></script>
