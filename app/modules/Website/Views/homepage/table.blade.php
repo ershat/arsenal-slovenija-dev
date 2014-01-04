@@ -1,4 +1,4 @@
-<h4>Lestvica</h4>
+<h4>Lestvica Premier Lige</h4>
 
 <table class="table table-hover" id="standings">
 	<tbody>
