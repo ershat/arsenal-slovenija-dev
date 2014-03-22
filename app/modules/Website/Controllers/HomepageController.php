@@ -1,13 +1,13 @@
 <?php namespace Website\Controllers;
 
-use View, Input, Redirect;
-use Website\Repositories\PostRepositoryInterface;
+use View, Input, Redirect, Request;
+use Website\Services\Post\Repository;
 
 class HomepageController extends \BaseController {
 
 	protected $post;
 
-	public function __construct(PostRepositoryInterface $post)
+	public function __construct(Repository $post)
 	{
 		$this->post = $post;
 	}
@@ -19,7 +19,10 @@ class HomepageController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('Website::homepage.index')->withFeatured($this->post->getFeatured())->withPosts($this->post->getPaginated(15));
+		$featured = $this->post->featured(3);
+		$posts = $this->post->paginated(15);
+
+		return View::make('Website::homepage.index', compact('featured', 'posts'));
 	}
 
 }

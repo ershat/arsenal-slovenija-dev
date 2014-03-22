@@ -21,7 +21,7 @@ class Match extends Eloquent {
   * Fillable
   *
   **/
-  public $fillable = array('scorers', 'home_team','home_team_image','home_goals','away_team','away_team_image','away_goals','season','time','competition', 'created_at', 'updated_at');
+  public $fillable = array('scorers', 'home_team','home_team_image','home_goals','away_team','away_team_image','away_goals','season','time','competition', 'created_at', 'updated_at', 'ext_match_id');
 
   /**
   *

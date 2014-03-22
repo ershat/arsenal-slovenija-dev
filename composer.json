@@ -4,11 +4,11 @@
 	"keywords": ["framework", "laravel"],
 	"require": {
 		"laravel/framework": "4.0.*",
-		"way/generators": "dev-master",
 		"loic-sharma/profiler": "1.1.*",
 		"creolab/laravel-modules": "dev-master",
 		"cviebrock/eloquent-sluggable": "1.0.*",
-		"intervention/image": "dev-master"
+		"intervention/image": "dev-master",
+		"soapbox/laravel-formatter": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
@@ -18,7 +18,8 @@
 		],
 		"psr-0": {
 			"Backend": "app/modules",
-			"Website": "app/modules"
+			"Website": "app/modules",
+			"Supporters": "app/"
 		}
 	},
 	"scripts": {

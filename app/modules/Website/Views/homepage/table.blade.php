@@ -1,19 +1,25 @@
 <h4>Lestvica Premier Lige</h4>
 
+@if ($standings)
 <table class="table table-hover" id="standings">
 	<tbody>
-		@foreach($standings as $index => $standing)
-			<tr @if ($standing->team == 'Arsenal') class="my-team" @endif>
-				<td>{{$index+1}}</td>
-				<td>{{$standing->team}}</td>
-				<td>{{$standing->played}}</td>
-				<td>{{$standing->points}}</td>
+		@foreach($standings as $index => $team)
+			@if ($index < 10)
+			<tr @if ($team['name'] == 'Arsenal') class="my-team" @endif>
+				<td>{{$team['position']}}</td>
+				<td>{{$team['name']}}</td>
+				<td>{{$team['played']}}</td>
+				<td>{{$team['points']}}</td>
 			</tr>
+			@endif
 		@endforeach
 	</tbody>
 </table>
 
-<a href="/lestvica" class="btn btn-danger btn-xs pull-right">Poglej polno lestvico</a>
+<a href="/premier-liga" class="btn btn-danger btn-xs pull-right">Poglej polno lestvico</a>
+@else
+	Napaka pri pridobivanju lestvice.
+@endif
 
 <div class="clearfix"></div>
 

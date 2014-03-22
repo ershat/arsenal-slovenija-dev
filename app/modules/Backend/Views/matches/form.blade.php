@@ -99,6 +99,11 @@
 		@endif
 	</div>	
 
+	<div class="form-group">
+		{{Form::label('ext_match_id', 'External match ID')}}
+		{{Form::text('ext_match_id', null, array('class' => 'form-control'))}}
+	</div>	
+
 </div>
 
 <div class="clearfix"></div>

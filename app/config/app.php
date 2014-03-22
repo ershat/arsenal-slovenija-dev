@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => false,
+	'debug' => true,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -113,11 +113,12 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-		'Profiler\ProfilerServiceProvider',
+		// 'Profiler\ProfilerServiceProvider',
 		'Creolab\LaravelModules\ServiceProvider',
-		'Way\Generators\GeneratorsServiceProvider',
 		'Cviebrock\EloquentSluggable\SluggableServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
+		'SoapBox\Formatter\FormatterServiceProvider'
+
 	),
 
 	/*
@@ -188,7 +189,8 @@ return array(
 		'Image' 					=> 'Intervention\Image\Facades\Image',
 		'Profiler' 				=> 'Profiler\Facades\Profiler',
 		'Sluggable' 			=> 'Cviebrock\EloquentSluggable\Facades\Sluggable',
-		'Image' 					=> 'Intervention\Image\Facades\Image'
+		'Image' 					=> 'Intervention\Image\Facades\Image',
+		'Formatter' 					=> 'SoapBox\Formatter\Facades\Formatter'
 	),
 
 );

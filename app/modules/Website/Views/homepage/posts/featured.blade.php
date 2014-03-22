@@ -9,8 +9,10 @@
 
 	  <div class="carousel-inner">
 	  	@foreach($featured as $index => $post)
-	      <a href="{{route('posts.show', $post->slug)}}" class="item @if($index == 0)active@endif" style="width: 100%; height: 350px; oveflow: hidden;">
-	        <img src="{{display_post_image($post->photo, 'big_')}}" alt="..." style="width: 100%;">
+	      <a href="{{route('posts.show', $post->slug)}}" class="item @if($index == 0)active@endif" style="width: 100%; oveflow: hidden;">
+	      	<div style="height: 320px;">
+	      		<img src="{{display_post_image($post->photo, 'big_')}}" alt="..." style="width: 100%;" class="img-responsive">	
+	      	</div>
 	        <div class="carousel-caption">
 	          <h4>{{$post->title}}</h4>
 

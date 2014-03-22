@@ -1,5 +1,4 @@
-<h4>Oglas</h4>
-
 <a href="http://www.stadionshop.si" target="_blank">
-	<img src="{{asset('/assets/module/website/images/stadion-shop-banner-240-240.png')}}" alt="">	
+	<img src="{{asset('/assets/module/website/images/banner_arsenal_340x158.jpg')}}" alt="">	
 </a>
+<br><br>

@@ -2,6 +2,7 @@
 
 use View, Input, Redirect, DB;
 use Backend\Models\Standing;
+use Formatter;
 
 class StandingsController extends \BaseController {
 
@@ -13,7 +14,17 @@ class StandingsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('Website::standings.index')->withStandings(Standing::orderBy('points', 'desc')->orderBy(DB::raw('(standings.for - standings.against)'), 'desc')->get());
+
+		try {
+			$xml = simplexml_load_file('http://www.footballwebpages.co.uk/league.xml?comp=1');
+			$result = Formatter::make($xml, 'xml')->to_array();
+
+			$standings = $result['team'];
+		} catch (\ErrorException $e) {
+			$standings = false;
+		}
+
+		return View::make('Website::standings.index')->withStandings($standings);
 	}
 
 }
